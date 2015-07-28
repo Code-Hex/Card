@@ -15,7 +15,6 @@
 @implementation AppDelegate
 
 static int i = 0;
-static int rnd;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
@@ -25,19 +24,35 @@ static int rnd;
         [ud synchronize];
     }
 
+    [_label setTextContainerInset:NSMakeSize(0, 10)]; // Padding NSTextView
+    
     CGFloat fontsize = [ud floatForKey:@"fontsize"];
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:@"test" ofType:@"plist"];
     
+    NSArray *items = [NSArray arrayWithObjects:@"coin", @"1up", @"exit", nil];
+    
+    for (NSString *filename in items) {
+        NSString *sound_path = [bundle pathForResource:filename ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:sound_path];
+        
+        if([filename isEqualToString:items[0]])
+            AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(url), &start);
+        else if([filename isEqualToString:items[1]])
+            AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(url), &up);
+        else
+            AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(url), &exit);
+    }
+    
     
     dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    keys = [dic allKeys];
+    keys = [[dic allKeys] mutableCopy];
     keysize = [keys count];
+
+    [self shuffle];
+    AudioServicesPlaySystemSound(start);
     
-    rnd = (int)arc4random_uniform((int)keysize);
-    str = keys[rnd];
-    
-    
+    str = keys[i];
     fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     
     [self.window makeFirstResponder:self];
@@ -49,7 +64,7 @@ static int rnd;
     [_decrement setTitle:@"-"];
     _back.hidden = true;
 
-    [_label setStringValue:fixed];
+    [_label setString:fixed];
 
     [_btn setAction:@selector(pushtonext:)];
     [_back setAction:@selector(pushtoback:)];
@@ -86,15 +101,20 @@ static int rnd;
 
 -(void)pushtonext:(id)sender {
     i++;
+    if (!(i % keysize)) {
+        [self shuffle];
+        AudioServicesPlaySystemSound(up);
+        i = 0;
+    }
+
     if (!(i % 2)) {
-        str = keys[rnd];
+        str = keys[i];
         fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        [_label setStringValue:fixed];
+        [_label setString:fixed];
         [_btn setTitle:@"Answer"];
         _back.hidden = true;
-        rnd = (int)arc4random_uniform((int)keysize);
     } else {
-        [_label setStringValue:dic[str]];
+        [_label setString:dic[str]];
         [_btn setTitle:@"Next"];
         _back.hidden = false;
     }
@@ -102,19 +122,30 @@ static int rnd;
 }
 
 -(void)pushtoback:(id)sender {
-        i--;
+        if(![_back isHidden]) i--;
         if (!(i % 2)) {
-            [_label setStringValue:fixed];
+            [_label setString:fixed];
             [_btn setTitle:@"Answer"];
             _back.hidden = true;
         } else {
-            [_label setStringValue:dic[str]];
+            [_label setString:dic[str]];
             [_btn setTitle:@"Next"];
         }
     [self.window makeFirstResponder:self];
 }
 
+- (void)shuffle {
+    for (NSUInteger ui = 0; ui < keysize - 1; ++ui) {
+        NSInteger remainingCount = keysize - ui;
+        NSInteger exchangeIndex = ui + arc4random_uniform((u_int32_t )remainingCount);
+        [keys exchangeObjectAtIndex:ui withObjectAtIndex:exchangeIndex];
+    }
+}
+
+
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
+    AudioServicesPlaySystemSound(exit);
+    [NSThread sleepForTimeInterval:3.1f];
     NSLog(@"Good Bye!!");
 }
 
