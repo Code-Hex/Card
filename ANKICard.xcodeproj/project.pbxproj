@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		701B22FC1B65ECC70024DA6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B22FB1B65ECC70024DA6B /* AppDelegate.m */; };
+		701B22FE1B65ECC70024DA6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B22FD1B65ECC70024DA6B /* main.m */; };
+		701B23001B65ECC70024DA6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 701B22FF1B65ECC70024DA6B /* Images.xcassets */; };
+		701B23031B65ECC70024DA6B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701B23011B65ECC70024DA6B /* MainMenu.xib */; };
+		701B230F1B65ECC70024DA6B /* ANKICardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B230E1B65ECC70024DA6B /* ANKICardTests.m */; };
+		701B23191B65ED510024DA6B /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 701B23181B65ED510024DA6B /* test.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		701B23091B65ECC70024DA6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 701B22ED1B65ECC70024DA6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 701B22F41B65ECC70024DA6B;
+			remoteInfo = ANKICard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		701B22F51B65ECC70024DA6B /* ANKICard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANKICard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		701B22F91B65ECC70024DA6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		701B22FA1B65ECC70024DA6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		701B22FB1B65ECC70024DA6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		701B22FD1B65ECC70024DA6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		701B22FF1B65ECC70024DA6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		701B23021B65ECC70024DA6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		701B23081B65ECC70024DA6B /* ANKICardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ANKICardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		701B230D1B65ECC70024DA6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		701B230E1B65ECC70024DA6B /* ANKICardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKICardTests.m; sourceTree = "<group>"; };
+		701B23181B65ED510024DA6B /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		701B22F21B65ECC70024DA6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		701B23051B65ECC70024DA6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		701B22EC1B65ECC70024DA6B = {
+			isa = PBXGroup;
+			children = (
+				701B22F71B65ECC70024DA6B /* ANKICard */,
+				701B230B1B65ECC70024DA6B /* ANKICardTests */,
+				701B22F61B65ECC70024DA6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		701B22F61B65ECC70024DA6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				701B22F51B65ECC70024DA6B /* ANKICard.app */,
+				701B23081B65ECC70024DA6B /* ANKICardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		701B22F71B65ECC70024DA6B /* ANKICard */ = {
+			isa = PBXGroup;
+			children = (
+				701B22FA1B65ECC70024DA6B /* AppDelegate.h */,
+				701B22FB1B65ECC70024DA6B /* AppDelegate.m */,
+				701B23181B65ED510024DA6B /* test.plist */,
+				701B22FF1B65ECC70024DA6B /* Images.xcassets */,
+				701B23011B65ECC70024DA6B /* MainMenu.xib */,
+				701B22F81B65ECC70024DA6B /* Supporting Files */,
+			);
+			path = ANKICard;
+			sourceTree = "<group>";
+		};
+		701B22F81B65ECC70024DA6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				701B22F91B65ECC70024DA6B /* Info.plist */,
+				701B22FD1B65ECC70024DA6B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		701B230B1B65ECC70024DA6B /* ANKICardTests */ = {
+			isa = PBXGroup;
+			children = (
+				701B230E1B65ECC70024DA6B /* ANKICardTests.m */,
+				701B230C1B65ECC70024DA6B /* Supporting Files */,
+			);
+			path = ANKICardTests;
+			sourceTree = "<group>";
+		};
+		701B230C1B65ECC70024DA6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				701B230D1B65ECC70024DA6B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		701B22F41B65ECC70024DA6B /* ANKICard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 701B23121B65ECC70024DA6B /* Build configuration list for PBXNativeTarget "ANKICard" */;
+			buildPhases = (
+				701B22F11B65ECC70024DA6B /* Sources */,
+				701B22F21B65ECC70024DA6B /* Frameworks */,
+				701B22F31B65ECC70024DA6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ANKICard;
+			productName = ANKICard;
+			productReference = 701B22F51B65ECC70024DA6B /* ANKICard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		701B23071B65ECC70024DA6B /* ANKICardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 701B23151B65ECC70024DA6B /* Build configuration list for PBXNativeTarget "ANKICardTests" */;
+			buildPhases = (
+				701B23041B65ECC70024DA6B /* Sources */,
+				701B23051B65ECC70024DA6B /* Frameworks */,
+				701B23061B65ECC70024DA6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				701B230A1B65ECC70024DA6B /* PBXTargetDependency */,
+			);
+			name = ANKICardTests;
+			productName = ANKICardTests;
+			productReference = 701B23081B65ECC70024DA6B /* ANKICardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		701B22ED1B65ECC70024DA6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = CodeHex;
+				TargetAttributes = {
+					701B22F41B65ECC70024DA6B = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					701B23071B65ECC70024DA6B = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 701B22F41B65ECC70024DA6B;
+					};
+				};
+			};
+			buildConfigurationList = 701B22F01B65ECC70024DA6B /* Build configuration list for PBXProject "ANKICard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 701B22EC1B65ECC70024DA6B;
+			productRefGroup = 701B22F61B65ECC70024DA6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				701B22F41B65ECC70024DA6B /* ANKICard */,
+				701B23071B65ECC70024DA6B /* ANKICardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		701B22F31B65ECC70024DA6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				701B23191B65ED510024DA6B /* test.plist in Resources */,
+				701B23001B65ECC70024DA6B /* Images.xcassets in Resources */,
+				701B23031B65ECC70024DA6B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		701B23061B65ECC70024DA6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		701B22F11B65ECC70024DA6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				701B22FE1B65ECC70024DA6B /* main.m in Sources */,
+				701B22FC1B65ECC70024DA6B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		701B23041B65ECC70024DA6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				701B230F1B65ECC70024DA6B /* ANKICardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		701B230A1B65ECC70024DA6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 701B22F41B65ECC70024DA6B /* ANKICard */;
+			targetProxy = 701B23091B65ECC70024DA6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		701B23011B65ECC70024DA6B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				701B23021B65ECC70024DA6B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		701B23101B65ECC70024DA6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		701B23111B65ECC70024DA6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		701B23131B65ECC70024DA6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ANKICard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		701B23141B65ECC70024DA6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ANKICard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		701B23161B65ECC70024DA6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ANKICardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ANKICard.app/Contents/MacOS/ANKICard";
+			};
+			name = Debug;
+		};
+		701B23171B65ECC70024DA6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ANKICardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ANKICard.app/Contents/MacOS/ANKICard";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		701B22F01B65ECC70024DA6B /* Build configuration list for PBXProject "ANKICard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				701B23101B65ECC70024DA6B /* Debug */,
+				701B23111B65ECC70024DA6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		701B23121B65ECC70024DA6B /* Build configuration list for PBXNativeTarget "ANKICard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				701B23131B65ECC70024DA6B /* Debug */,
+				701B23141B65ECC70024DA6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		701B23151B65ECC70024DA6B /* Build configuration list for PBXNativeTarget "ANKICardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				701B23161B65ECC70024DA6B /* Debug */,
+				701B23171B65ECC70024DA6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 701B22ED1B65ECC70024DA6B /* Project object */;
+}

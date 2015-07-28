@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IETF で標準化しようとするプロトコルは、インターネット上でドキュメントと
+して公開される。このドキュメントは何と呼ばれるか</key>
+	<string>RFC(Request For Comments)</string>
+	<key>OSI 参照モデルにおいて、直接接続された同一リンク内の機器間でのデータフ
+レームの識別と転送を担当する層は何と呼ばれるか</key>
+	<string>データリンク層</string>
+	<key>単一のアドレスを指定して、1対1で行われるデータ通信のこと</key>
+	<string>ユニキャスト</string>
+	<key>特定のアドレスを指定して、1対複数で行われるデータ通信のこと</key>
+	<string>マルチキャスト</string>
+	<key>同じデータリンク内の全宛先を指定し、1対不特定多数で行われるデータ通信</key>
+	<string>ブロードキャスト</string>
+	<key>イーサネットにおいて、データフレームの衝突を回避するためのアクセス制御
+方式は何と呼ばれるか</key>
+	<string>CSMA/CD(Carrier Sense Multiple Access/Collision Detection)</string>
+	<key>ホスト名(ドメイン名)と IP アドレスを変換するための、インターネット上に広がる分散データベースは何と呼ばれるか</key>
+	<string>DNS(Domain Name System)</string>
+	<key>IP アドレスからハードウェアごとに一意に決められた 48 ビットのアドレスを
+調べるプロトコルは何と呼ばれるか</key>
+	<string>ARP(Address Resolution Protocol)</string>
+	<key>ネットワークの正常性確認、状態通知、チューニングなど、IP を補助するプロ
+トコルは何と呼ばれるか</key>
+	<string>ICMP(Internet Control Message Protocol)</string>
+	<key>ホストの IP アドレス設定を自動化し、プラグ＆プレイを可能にする仕組みは
+何と呼ばれるか</key>
+	<string>DHCP(Dynamic Host Configuration Protocol)</string>
+	<key>プライベート IP をグローバル IP に変換する技術は NAT と呼ばれるが、さら
+に、TCP や UDP のポート番号も変換して、内部の複数のホストが同時にインタ
+ーネット通信できるようにする仕組みは何と呼ばれるか</key>
+	<string>NAPT(Network Address Port Translation)</string>
+	<key> IPv4 アドレス「176.9.75.229」のクラスをは？</key>
+	<string>第 1 オクテッド目の「176」を 2 進数表記すると「10110000」となる。
+つまり、「クラス B」（答え）であることが分かる。</string>
+	<key> IPv6 アドレス「2001:02f8:0000:0000:a3a0:0000:0000:0010」の簡略表記は？</key>
+	<string>2001:2f8::a3a0:0:0:10</string>
+	<key>IPv4 アドレス「176.9.75.229」のサブネットマスクを「255.255.255.192」とする。この場合、「176.9.75.229」のネットワークアドレスとブロードキャストアドレスを答えよ。</key>
+	<string>まず、サブネットマスクの第 1～3 オクテッドは 255(10)であるので、第 4 オクテッド
+だけを考えればよい。
+IPv4 アドレスの第 4 オクテッド「229(10)」の 2 進数表記は「11100101(2)」であり、
+サブネットマスクの「192(10)」の 2 進数表記は「11000000(2)」である。
+これら 2 つの 2 進数の AND を取ると「11000000(2)」=「192(10)」である。
+すなわち、ネットワークアドレスは、「176.9.75.192」（答え）である。
+次に、ブロードキャストアドレスは、ホスト部を全て「1(2)」とすればよいので、IPv4
+アドレスの第 4 オクテッドは「11111111(2)」=「255(10)」となる。
+すなわち、ブロードキャストアドレスは、「176.9.75.255」（答え）である。</string>
+	<key>OSI参照モデルのネットワーク層の上位層（第4層）</key>
+	<string>トランスポート層</string>
+	<key>サーバーでは、クライアントからの要求を処理するた
+めのプログラムが予め起動していること</key>
+	<string>クライアント・サーバーモデル</string>
+	<key>コネクション志向で信頼性のあるストリーム型プロトコル</key>
+	<string>TCP（Transmission Control Protocol）</string>
+	<key>信頼性は保証しないデータグラム型プロトコル</key>
+	<string>UDP（User Datagram Protocol</string>
+	<key>TCPとUDPの使い分けは？</key>
+	<string>TCPは信頼性、UDPは高速性を求める場合</string>
+	<key>同一のコンピュータ内でアプリケーション（プログラ
+ム）を区別するための識別子</key>
+	<string>ポート番号</string>
+	<key>標準で決められているポート番号で、HTTP,HTTPS,SMTP,IMAP4,etc. 指定されたアプリケーション以外で使用してはいけないポート</key>
+	<string>ウェルノウンポート(0~1023)</string>
+	<key>標準で決められているポート番号で、指定されたアプリケーションでの使用が原則であるが、他の用途で使っても問題はないポート</key>
+	<string>準ウェルノウンポート（1024～49151）</string>
+	<key>送信側が発信ポートとしてダイナミックに割り当てるポート</key>
+	<string>ダイナミックポート（49152～65535）</string>
+	<key>シンプルな通信サービスを提供、コネクションレス型の通信方式、信頼性はアプリケーション側で提供しなければならないプロトコル</key>
+	<string>UDP（User Datagram Protocol）</string>
+	<key>通信の信頼性を提供、コネクション型の通信方式のプロトコル</key>
+	<string>TCP（Transmission Control Protocol）</string>
+	<key>送信元はTCPヘッダだけのSYNパケットを送信して確認応答を待ち、相手から確認応答が送られてきた場合は通信が可能となるコネクション管理方法</key>
+	<string>スリーウェイハンドシェイク</string>
+	<key>ルーターに固定的（静的）に経路情報を設定する方法</key>
+	<string>スタティックルーティング</string>
+	<key>ルーティングプロトコルによって、自動的（動的）に経路情報を設定する方法</key>
+	<string>ダイナミックルーティング</string>
+	<key>隣接ルーター間で自分が知っているネットワークの接続情報を交換することで行われる。隣接ルーター間で経路情報の交換が再帰的に行われることで、全てのネットワークに通信可能になる。このプロトコルは？</key>
+	<string>ダイナミックルーティングプロトコル</string>
+	<key>経路制御に関するルールを決め、それをもとに運用する範囲を〜や〜という。</key>
+	<string>自律システム（AS:Autonomous System）、経路制御ドメイン（Routing Domain)</string>
+	<key>AS(自律システム)内ダイナミックルーティングプロトコル</key>
+	<string>IGP</string>
+	<key>AS(自律システム)間ダイナミックルーティングプロトコル</key>
+	<string>EGP</string>
+	<key>ルーターはネットワーク的な距離（メトリック）と方向
+によって目的となるネットワークやホストを決定する制御アルゴリズム</key>
+	<string>距離ベクトル型（Distance-Vector）</string>
+	<key>ルーターはネットワーク全体の接続状態を理解して経路制御表を作成する経路制御アルゴリズム</key>
+	<string>リンク状態型（Link-State）</string>
+	<key>経路制御情報を30秒ごとにネットワーク上にブロードキャストするプロトコル</key>
+	<string>RIP（Routing Information Protocol）</string>
+	<key>ルーター間でリンクの状態を交換し、ネットワークのトポロジー情報（データベース）を作成するプロトコルで、リンクの重み（コスト）が小さい経路を選択する。</key>
+	<string>OSPF（Open Shortest Path First）</string>
+	<key>通過するASの数で経路制御を行うプロトコル</key>
+	<string>BGP（Border Gateway Protocol）</string>
+	<key>BGPで、自分以外のAS間の通信を中継すること。</key>
+	<string>トランジット</string>
+	<key>個々のアプリケーション特有の通信処理を行うプロトコル</key>
+	<string>アプリケーションプロトコル</string>
+	<key>TCPコネクションを1つ使用し、相手ホストに文字列でコマンドを送信し、相手ホストのシェルで実行させるアプリケーション</key>
+	<string>TELNET</string>
+	<key>暗号化された遠隔ログインシステムを持つアプリケーション</key>
+	<string>SSH</string>
+	<key>TCPコネクションを2つ使用（制御用、データ転送用）し、ホスト間でファイル転送するためのプロトコル</key>
+	<string>FTP</string>
+	<key>インターネット上でメール受信者を特定するアドレス</key>
+	<string>メールアドレス</string>
+	<key>「ヘッダ」と「本文」から構成され、電子メールでテキスト文字以外の様々なデータ形式を扱えるようにする拡張方式</key>
+	<string>MIME（Multipurpose Internet Mail Extensions）</string>
+	<key>電子メールを配送するアプリケーションプロトコル</key>
+	<string>SMTP（Simple Mail Transfer Protocol）</string>
+	<key>電子メールの管理はクライアント側で行う、電子メールを受信するアプリケーションプロトコル</key>
+	<string>POP（Post Office Protocol）</string>
+	<key>電子メールの管理はサーバー側で行う、電子メールを受信するアプリケーションプロトコル</key>
+	<string>IMAP（Internet Message Access Protocol）</string>
+	<key>WWW情報を利用するクライアントソフトウェア</key>
+	<string>Webブラウザー</string>
+	<key>WWWの基本概念の一つで、情報へのアクセス手段と位置の定義</key>
+	<string>URI</string>
+	<key>WWWの基本概念の一つで、情報の転送など操作の定義</key>
+	<string>HTTP</string>
+	<key>WWWの基本概念の一つで、情報の表現フォーマットの定義</key>
+	<string>HTML</string>
+	<key>WebブラウザーとWebサーバーとの間で、リクエストや応答の送受信を行うためのプロトコル</key>
+	<string>HTTP（Hyper Text Transfer Protocol）</string>
+	<key>Webサーバーがクライアント側に情報を格納する仕組み</key>
+	<string>クッキー（Cookie）</string>
+	<key>ネットワーク管理情報をやり取りする仕組み</key>
+	<string>SNMP（Simple Network Management Protocol）</string>
+	<key>SNMPでやりとりされる情報（を入れる箱）</key>
+	<string>MIB（Management Information Base）</string>
+	<key>ネットワーク回線を監視するMIB群から構成</key>
+	<string>RMON（Remote Monitoring MIB）</string>
+	<key>IPネットワーク上で音声や映像のやり取りを取り扱う技術</key>
+	<string>H.323</string>
+	<key>H.323よりもシンプルでインターネット利用に最適化された技術</key>
+	<string>SIP（Session Initiation Protocol）</string>
+	<key>経路制御情報を定期的にネットワーク上にブロードキャストし、距離ベクトル型により経路決定するルーティングプロトコル</key>
+	<string>RIP(Routing Information Protocol)</string>
+	<key>UDPに順序制御を追加してリアルタイム通信に最適化された技術</key>
+	<string>RTP（Real-Time Protocol）</string>
+	<key>マルチキャストを使用し、サブネットマスクにも対応したRIP</key>
+	<string>RIP2</string>
+	<key>サーバーを介さずに端末同士が直接通信する方式</key>
+	<string>P2P（Peer To Peer）</string>
+	<key>一般的に認証サービスとして利用されることが多い、ディレクトリサービスを提供するためのプロトコル</key>
+	<string>LDAP（Lightweight Directory Access Protocol）</string>
+	<key>通知だけではなく、侵入を防止するシステム</key>
+	<string>侵入防止システム（Intrusion Prevention System）</string>
+	<key>通信を行うデータ単位,ホスト間で決定される.</key>
+	<string>MSS</string>
+	<key>順次複数のセグメントを並列的に送信して,通信性能を向上させる仕組み.</key>
+	<string>スライディングウインドウ方式</string>
+	<key>暗号化と復号に同じ鍵を使用。処理が高速。</key>
+	<string>共通鍵暗号方式</string>
+	<key>暗号化と復号に一対の別々の鍵を使用。(公開鍵, 秘密鍵),処理が重い。</key>
+	<string>公開鍵暗号方式</string>
+	<key>組織内部と外部（インターネット）の間に設置する、パケットフィルタリングタイプとアプリケーションゲートウェイタイプを持つセキュリティ</key>
+	<string>ファイアウォール</string>
+	<key>通信の中身を監視し、不正侵入を目的とした通信を管理者に通知するシステム</key>
+	<string>IDS（侵入検知システム）</string>
+	<key>インターネット上の仮想的な私的ネットワーク</key>
+	<string>VPN（Virtual Private Network）</string>
+	<key>ホストを出入りする通信やファイル等を監視し、不正動作やマルウェア（ウィルス）を防いだり、攻撃パターンデータを更新することで、あらゆる攻撃からホストを防御</key>
+	<string>アンチウィルス/パーソナルファイアウォール</string>
+	<key>認められた機器のみがネットワーク接続できるように認証する仕組み</key>
+	<string>IEEE802.1X</string>
+	<key>ラベルスイッチングというIPアドレスの送信方法を用いた代表的なもの</key>
+	<string>MPLS(Multi Protcol Label Switching)</string>
+	<key>???</key>
+	<string>
+　 　　 　　　∧__∧
+　　　　　　( ´･ω･)∧∧
+　　　　　 　/⌒ ,つ⌒ヽ)
+　　　 　 　(___　 (　　__)　
+&quot;&apos;&apos;&quot;&quot; &quot;&apos;ﾞ&apos;&apos;` &apos;ﾞ ﾞﾟ&apos;　&apos;&apos;&apos;　&apos;&apos;　&apos;&apos;&apos;　ﾟ`　ﾞ　ﾟ ﾞ&apos;&apos;`</string>
+</dict>
+</plist>
