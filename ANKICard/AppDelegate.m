@@ -17,14 +17,7 @@
 static int i = 0;
 static int rnd;
 
-NSInteger keysize;
-NSDictionary *dic;
-NSArray *keys;
-NSString *str;
-NSString *fixed;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     if (![ud floatForKey:@"fontsize"]) {
@@ -72,9 +65,7 @@ NSString *fixed;
     if ((fontsize + 1) < 26)
         fontsize += 1;
     
-    [_label setFont:[NSFont systemFontOfSize:fontsize]];
-    [ud setFloat:fontsize forKey:@"fontsize"];
-    [ud synchronize];
+    [self store:fontsize data:ud];
 }
 
 -(void)fontsizedecrement:(id)sender {
@@ -83,10 +74,14 @@ NSString *fixed;
     
     if (8 < (fontsize - 1))
         fontsize -= 1;
-    
+    [self store:fontsize data:ud];
+}
+
+-(void)store:(CGFloat)fontsize data:(NSUserDefaults*)ud {
     [_label setFont:[NSFont systemFontOfSize:fontsize]];
     [ud setFloat:fontsize forKey:@"fontsize"];
     [ud synchronize];
+    [self.window makeFirstResponder:self];
 }
 
 -(void)pushtonext:(id)sender {
@@ -103,6 +98,7 @@ NSString *fixed;
         [_btn setTitle:@"Next"];
         _back.hidden = false;
     }
+    [self.window makeFirstResponder:self];
 }
 
 -(void)pushtoback:(id)sender {
@@ -115,14 +111,11 @@ NSString *fixed;
             [_label setStringValue:dic[str]];
             [_btn setTitle:@"Next"];
         }
+    [self.window makeFirstResponder:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     NSLog(@"Good Bye!!");
-}
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
-    return YES;
 }
 
 -(void)keyDown:(NSEvent*)event
@@ -147,6 +140,10 @@ NSString *fixed;
                 [NSApp terminate:self];
             break;
     }
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+    return YES;
 }
 
 @end

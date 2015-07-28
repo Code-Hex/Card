@@ -8,8 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSWindow <NSApplicationDelegate>
-
+@interface AppDelegate : NSWindow <NSApplicationDelegate> {
+    NSInteger keysize;
+    NSDictionary *dic;
+    NSArray *keys;
+    NSString *str;
+    NSString *fixed;
+}
 @property (weak) IBOutlet NSButton *btn;
 @property (weak) IBOutlet NSTextField *label;
 @property (weak) IBOutlet NSButton *back;
