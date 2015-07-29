@@ -52,7 +52,7 @@ static int i = 0;
     [self shuffle];
     AudioServicesPlaySystemSound(start);
     
-    str = keys[i];
+    str = keys[i]; i++;
     fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     
     [self.window makeFirstResponder:self];
@@ -100,15 +100,16 @@ static int i = 0;
 }
 
 -(void)pushtonext:(id)sender {
-    i++;
-    if (!(i % keysize)) {
+    if (!(i % keysize) && i) {
         [self shuffle];
-        AudioServicesPlaySystemSound(up);
         i = 0;
     }
+    
+    if (![_back isHidden]) {
+        
+        if (!i) AudioServicesPlaySystemSound(up);
 
-    if (!(i % 2)) {
-        str = keys[i];
+        str = keys[i]; i++;
         fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         [_label setString:fixed];
         [_btn setTitle:@"Answer"];
@@ -118,19 +119,14 @@ static int i = 0;
         [_btn setTitle:@"Next"];
         _back.hidden = false;
     }
+    
     [self.window makeFirstResponder:self];
 }
 
 -(void)pushtoback:(id)sender {
-        if(![_back isHidden]) i--;
-        if (!(i % 2)) {
-            [_label setString:fixed];
-            [_btn setTitle:@"Answer"];
-            _back.hidden = true;
-        } else {
-            [_label setString:dic[str]];
-            [_btn setTitle:@"Next"];
-        }
+    [_label setString:fixed];
+    [_btn setTitle:@"Answer"];
+    _back.hidden = true;
     [self.window makeFirstResponder:self];
 }
 
