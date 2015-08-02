@@ -17,11 +17,14 @@
     NSString *str;
     NSString *fixed;
 }
+
 @property (weak) IBOutlet NSButton *btn;
 @property (weak) IBOutlet NSButton *back;
 @property (weak) IBOutlet NSButton *decrement;
 @property (weak) IBOutlet NSButton *increment;
 @property (unsafe_unretained) IBOutlet NSTextView *label;
+@property (weak) IBOutlet NSProgressIndicator *progress;
+@property (weak) IBOutlet NSTextField *pc;
 
 
 @end

@@ -23,7 +23,7 @@ static int i = 0;
         [ud setFloat:12.0 forKey:@"fontsize"];
         [ud synchronize];
     }
-
+    
     [_label setTextContainerInset:NSMakeSize(0, 10)]; // Padding NSTextView
     
     CGFloat fontsize = [ud floatForKey:@"fontsize"];
@@ -48,8 +48,9 @@ static int i = 0;
     dic = [NSDictionary dictionaryWithContentsOfFile:path];
     keys = [[dic allKeys] mutableCopy];
     keysize = [keys count];
-
+    
     [self shuffle];
+    [_progress setMaxValue:keysize];
     AudioServicesPlaySystemSound(start);
     
     str = keys[i]; i++;
@@ -62,10 +63,11 @@ static int i = 0;
     [_back setTitle:@"Back"];
     [_increment setTitle:@"+"];
     [_decrement setTitle:@"-"];
+    [_pc setStringValue:[NSString stringWithFormat:@"0 %%"]];
     _back.hidden = true;
-
+    
     [_label setString:fixed];
-
+    
     [_btn setAction:@selector(pushtonext:)];
     [_back setAction:@selector(pushtoback:)];
     [_increment setAction:@selector(fontsizeincrement:)];
@@ -100,18 +102,21 @@ static int i = 0;
 }
 
 -(void)pushtonext:(id)sender {
-    if (!(i % keysize) && i) {
-        [self shuffle];
-        i = 0;
-    }
     
-    if (![_back isHidden]) {
+    if ([_btn.title isEqualToString:@"Next"]) {
+        i++;
+        if (!(i % keysize)) {
+            [self shuffle];
+            AudioServicesPlaySystemSound(up);
+            i = 0;
+            [_progress setDoubleValue:i];
+        } else [_progress incrementBy:1.0];
         
-        if (!i) AudioServicesPlaySystemSound(up);
-
-        str = keys[i]; i++;
+        str = keys[i];
         fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         [_label setString:fixed];
+        double prgrs = i / (double)keysize * 100;
+        [_pc setStringValue:[NSString stringWithFormat:@"%1.f %%", prgrs]];
         [_btn setTitle:@"Answer"];
         _back.hidden = true;
     } else {
@@ -119,17 +124,24 @@ static int i = 0;
         [_btn setTitle:@"Next"];
         _back.hidden = false;
     }
+        
+    [self.window makeFirstResponder:self];
+}
     
-    [self.window makeFirstResponder:self];
-}
-
 -(void)pushtoback:(id)sender {
-    [_label setString:fixed];
-    [_btn setTitle:@"Answer"];
-    _back.hidden = true;
+
+    if ([_btn.title isEqualToString:@"Next"]) {
+        [_label setString:fixed];
+        [_btn setTitle:@"Answer"];
+        _back.hidden = true;
+    } else if (![_back isHidden]) {
+        [_label setString:dic[str]];
+        [_btn setTitle:@"Next"];
+    }
+
     [self.window makeFirstResponder:self];
 }
-
+    
 - (void)shuffle {
     for (NSUInteger ui = 0; ui < keysize - 1; ++ui) {
         NSInteger remainingCount = keysize - ui;
@@ -137,16 +149,15 @@ static int i = 0;
         [keys exchangeObjectAtIndex:ui withObjectAtIndex:exchangeIndex];
     }
 }
-
-
+    
+    
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     AudioServicesPlaySystemSound(exit);
     [NSThread sleepForTimeInterval:3.1f];
     NSLog(@"Good Bye!!");
 }
-
--(void)keyDown:(NSEvent*)event
-{
+    
+-(void)keyDown:(NSEvent*)event {
     NSInteger i = [event keyCode];
     NSUInteger modifierFlags = [event modifierFlags];
     switch(i) {
@@ -168,9 +179,9 @@ static int i = 0;
             break;
     }
 }
-
+    
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
     return YES;
 }
-
+    
 @end
