@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>読み込んだプログラムやデータを格納しておき，必要な時いつでも参照できる．主記憶装置(main storage)と補助記憶装置(auxiliary storage)から構成される.
+また，演算結果も保持される.</key>
+	<string>記憶部(storage unit)</string>
+	<key>プログラムやデータをコンピュータに読み込む（入力）機能を有している</key>
+	<string>入力部(input unit or input device)</string>
+	<key>記憶部に格納されているプログラムに従って，データを処理する </key>
+	<string>演算部(arithmetic and logic unit)</string>
+	<key>記憶装置にある処理(演算)結果を，人間が理解できる形式で用紙や画面などに表示(出力)する</key>
+	<string>出力部(output unit)</string>
+	<key>プログラムの命令に従って，入力・記憶・演算・および出力の各要素に対して制御信号を出し，それらの要素の働きをコントロールする.制御部から出力された制御信号により他のすべての装置が機能する.</key>
+	<string>制御部(control unit)</string>
+	<key>読み出された命令を一時格納する</key>
+	<string>命令レジスタ（IR：instruction register）</string>
+	<key>命令を解読し，各装置への制御信号やプログラムやデータをアクセスするためのアドレスを発生する</key>
+	<string>デコーダ（DEC：decoder）</string>
+	<key>逐次実行を実現するための命令アドレスを発生し，主記憶装置から命令が
+読み出された後，自動的に次に実行すべき命令が格納されているアドレスを示す</key>
+	<string>プログラムカウンタ（PC：program counter）</string>
+	<key>四則演算，比較演算，論理演算などの演算を行う</key>
+	<string>算術論理演算装置（ALU：arithmetic-logic unit）</string>
+	<key>演算などに必要なデータを一時格納する</key>
+	<string>レジスタ（REG：register）</string>
+	<key>主記憶装置へアクセスするためのアドレスを格納する</key>
+	<string>メモリアドレスレジスタ（MAR：memory address register）</string>
+	<key>アドレス指定された記憶位置に対して，命令やデータの読み書きを行う</key>
+	<string>メインメモリ（MM：main memory）</string>
+</dict>
+</plist>

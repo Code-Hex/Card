@@ -9,13 +9,15 @@
 #import <Cocoa/Cocoa.h>
 #import <AudioToolbox/AudioServices.h>
 
-@interface AppDelegate : NSWindow <NSApplicationDelegate> {
+@interface AppDelegate : NSWindow <NSApplicationDelegate,NSSpeechSynthesizerDelegate,NSMenuDelegate> {
     SystemSoundID start, up, exit;
     NSInteger keysize;
     NSDictionary *dic;
+    NSMutableArray *filelist;
     NSMutableArray *keys;
     NSString *str;
     NSString *fixed;
+    NSSpeechSynthesizer *speech;
 }
 
 @property (weak) IBOutlet NSButton *btn;
@@ -25,6 +27,9 @@
 @property (unsafe_unretained) IBOutlet NSTextView *label;
 @property (weak) IBOutlet NSProgressIndicator *progress;
 @property (weak) IBOutlet NSTextField *pc;
+@property (weak) IBOutlet NSButton *play;
+@property (weak) IBOutlet NSMenu *filemenu;
+
 
 
 @end

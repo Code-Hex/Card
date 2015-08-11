@@ -17,9 +17,11 @@
                 <outlet property="back" destination="1us-UE-oZO" id="eZR-GF-dqk"/>
                 <outlet property="btn" destination="KJh-Nw-PqU" id="nPS-sA-cud"/>
                 <outlet property="decrement" destination="bXm-Wg-ies" id="WUM-jK-oph"/>
+                <outlet property="filemenu" destination="xMo-Vc-aFF" id="lej-kS-r7z"/>
                 <outlet property="increment" destination="JHL-dQ-2ns" id="BL0-5h-QQP"/>
                 <outlet property="label" destination="Wq7-vm-Tqi" id="8pJ-Wq-Xgs"/>
                 <outlet property="pc" destination="N4g-t5-9BQ" id="kLQ-Gz-iFA"/>
+                <outlet property="play" destination="ah8-kc-B7e" id="gcy-L5-qf1"/>
                 <outlet property="progress" destination="JKO-jS-Wd2" id="Fw3-EW-emi"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -148,14 +150,14 @@
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JHL-dQ-2ns">
-                        <rect key="frame" x="240" y="20" width="25" height="25"/>
+                        <rect key="frame" x="240" y="43" width="25" height="25"/>
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XLq-Ub-ZZA">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-Wg-ies">
-                        <rect key="frame" x="215" y="20" width="25" height="25"/>
+                        <rect key="frame" x="215" y="43" width="25" height="25"/>
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tqf-ve-yZk">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -168,6 +170,21 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ah8-kc-B7e">
+                        <rect key="frame" x="345" y="10" width="39" height="38"/>
+                        <buttonCell key="cell" type="round" title="▶︎" bezelStyle="circular" imagePosition="below" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="wSD-ZZ-b3O">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="LucidaGrande"/>
+                        </buttonCell>
+                    </button>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Zz-od-DW9">
+                        <rect key="frame" x="191" y="16" width="100" height="26"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="se3-Fo-WCS">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="xMo-Vc-aFF"/>
+                        </popUpButtonCell>
+                    </popUpButton>
                 </subviews>
             </view>
             <point key="canvasLocation" x="16" y="55"/>

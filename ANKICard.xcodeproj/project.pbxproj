@@ -17,6 +17,7 @@
 		7074A1981B67E72800158CE1 /* 1up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7074A1951B67E72800158CE1 /* 1up.wav */; };
 		7074A1991B67E72800158CE1 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7074A1961B67E72800158CE1 /* coin.wav */; };
 		7074A19A1B67E72800158CE1 /* exit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7074A1971B67E72800158CE1 /* exit.wav */; };
+		70FDDAB41B764EFD0047F521 /* comsys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70FDDAB31B764EFD0047F521 /* comsys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		7074A1951B67E72800158CE1 /* 1up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1up.wav; sourceTree = "<group>"; };
 		7074A1961B67E72800158CE1 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
 		7074A1971B67E72800158CE1 /* exit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = exit.wav; sourceTree = "<group>"; };
+		70FDDAB31B764EFD0047F521 /* comsys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = comsys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				701B22FA1B65ECC70024DA6B /* AppDelegate.h */,
 				701B22FB1B65ECC70024DA6B /* AppDelegate.m */,
+				70FDDAB31B764EFD0047F521 /* comsys.plist */,
 				701B23181B65ED510024DA6B /* test.plist */,
 				701B22FF1B65ECC70024DA6B /* Images.xcassets */,
 				701B23011B65ECC70024DA6B /* MainMenu.xib */,
@@ -215,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FDDAB41B764EFD0047F521 /* comsys.plist in Resources */,
 				7074A19A1B67E72800158CE1 /* exit.wav in Resources */,
 				7074A1991B67E72800158CE1 /* coin.wav in Resources */,
 				701B23191B65ED510024DA6B /* test.plist in Resources */,

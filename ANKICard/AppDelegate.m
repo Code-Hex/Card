@@ -16,6 +16,26 @@
 
 static int i = 0;
 
+-(id)init {
+    
+    if (self = [super init]) {
+        NSLog(@"init");
+        speech = [[NSSpeechSynthesizer alloc] initWithVoice:@"com.apple.speech.synthesis.voice.kyoko.premium"];
+        keys = [[NSMutableArray alloc] init];
+        
+        NSArray *ary = [self getFileList:@".plist"];
+        filelist = [[NSMutableArray alloc] initWithArray:
+                    [ary sortedArrayUsingComparator:
+                     ^(id o1, id o2) {
+                         return [o1 compare:o2];
+                     }]];
+        [speech setDelegate:self];
+    }
+    
+    return self;
+    
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
@@ -26,10 +46,23 @@ static int i = 0;
     
     [_label setTextContainerInset:NSMakeSize(0, 10)]; // Padding NSTextView
     
-    CGFloat fontsize = [ud floatForKey:@"fontsize"];
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *path = [bundle pathForResource:@"test" ofType:@"plist"];
+    // from popupmenu
+    NSInteger cnt = 0;
+    for(NSString *title in filelist){
+        NSMenuItem *menuItem = [[NSMenuItem alloc]
+                                initWithTitle:title
+                                action:@selector(fileswitch:)
+                                keyEquivalent:@""];
+        [menuItem setTarget:self];
+        [_filemenu insertItem:menuItem atIndex:cnt];
+        cnt++;
+    }
+    // NSLog(@"%@",_filemenu);
+    // to
     
+    CGFloat fontsize = [ud floatForKey:@"fontsize"];
+    
+    NSBundle *bundle = [NSBundle mainBundle];
     NSArray *items = [NSArray arrayWithObjects:@"coin", @"1up", @"exit", nil];
     
     for (NSString *filename in items) {
@@ -44,17 +77,9 @@ static int i = 0;
             AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(url), &exit);
     }
     
-    
-    dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    keys = [[dic allKeys] mutableCopy];
-    keysize = [keys count];
-    
-    [self shuffle];
-    [_progress setMaxValue:keysize];
+    [self fileswitch:[_filemenu itemAtIndex:0]];
+
     AudioServicesPlaySystemSound(start);
-    
-    str = keys[i]; i++;
-    fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     
     [self.window makeFirstResponder:self];
     
@@ -63,16 +88,49 @@ static int i = 0;
     [_back setTitle:@"Back"];
     [_increment setTitle:@"+"];
     [_decrement setTitle:@"-"];
-    [_pc setStringValue:[NSString stringWithFormat:@"0 %%"]];
-    _back.hidden = true;
-    
-    [_label setString:fixed];
     
     [_btn setAction:@selector(pushtonext:)];
     [_back setAction:@selector(pushtoback:)];
     [_increment setAction:@selector(fontsizeincrement:)];
     [_decrement setAction:@selector(fontsizedecrement:)];
+    [_play setAction:@selector(say:)];
+}
+
+- (void)fileswitch:(NSMenuItem *)ItemName {
+    NSString *filename = ItemName.title;
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:filename ofType:@"plist"];
     
+    dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    keys = [[dic allKeys] mutableCopy];
+    keysize = [keys count];
+    
+    [self shuffle];
+    i = 0;
+    [_progress setMaxValue:keysize];
+    [_progress setDoubleValue:i];
+    
+    str = keys[i]; i++;
+    fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    _back.hidden = true;
+    [_label setString:fixed];
+    [_pc setStringValue:[NSString stringWithFormat:@"0 %%"]];
+}
+
+- (void)say:(id)sender {
+    [speech startSpeakingString:str];
+    [_play setAction:@selector(stop:)];
+    [_play setTitle:@" ■"];
+}
+
+- (void)stop:(id)sender {
+    [speech stopSpeaking];
+    [_play setTitle:@"▶︎"];
+    [_play setAction:@selector(say:)];
+}
+
+- (void)speechSynthesizer:(NSSpeechSynthesizer *)sender didFinishSpeaking:(BOOL)finishedSpeaking {
+    [self performSelector:@selector(stop:) withObject:self];
 }
 
 -(void)fontsizeincrement:(id)sender {
@@ -149,14 +207,29 @@ static int i = 0;
         [keys exchangeObjectAtIndex:ui withObjectAtIndex:exchangeIndex];
     }
 }
+
+-(NSArray *)getFileList:(NSString *)extension {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSFileManager* fileManager = [[NSFileManager alloc] init];
+    NSString *path = [[NSBundle mainBundle] bundlePath];
     
+    path = [path stringByAppendingPathComponent:@"Contents/Resources/"];
+    // NSLog(@"%@",path);
+    for(NSString *content in [fileManager contentsOfDirectoryAtPath:path error:nil]) {
+        if ([content hasSuffix:extension]) {
+            NSString *contents = [content stringByDeletingPathExtension];
+            [array addObject:contents];
+        }
+    }
+    return array;
+}
     
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     AudioServicesPlaySystemSound(exit);
     [NSThread sleepForTimeInterval:3.1f];
     NSLog(@"Good Bye!!");
 }
-    
+
 -(void)keyDown:(NSEvent*)event {
     NSInteger i = [event keyCode];
     NSUInteger modifierFlags = [event modifierFlags];
