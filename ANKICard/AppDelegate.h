@@ -12,10 +12,10 @@
 @interface AppDelegate : NSWindow <NSApplicationDelegate,NSSpeechSynthesizerDelegate,NSMenuDelegate> {
     SystemSoundID start, up, exit;
     NSInteger keysize;
-    NSDictionary *dic;
+    NSMutableDictionary *dic;
     NSMutableArray *filelist;
     NSMutableArray *keys;
-    NSString *str;
+    NSString *ans;
     NSString *fixed;
     NSSpeechSynthesizer *speech;
 }

@@ -38,6 +38,9 @@ static int i = 0;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
+    // [self.window setStyleMask:NSBorderlessWindowMask]; // Hide title bar
+    [self.window setMovableByWindowBackground:YES];
+    // [self.window setAlphaValue:0.9];
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     if (![ud floatForKey:@"fontsize"]) {
         [ud setFloat:12.0 forKey:@"fontsize"];
@@ -101,7 +104,7 @@ static int i = 0;
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:filename ofType:@"plist"];
     
-    dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    dic = [NSMutableDictionary dictionaryWithContentsOfFile:path];
     keys = [[dic allKeys] mutableCopy];
     keysize = [keys count];
     
@@ -110,15 +113,15 @@ static int i = 0;
     [_progress setMaxValue:keysize];
     [_progress setDoubleValue:i];
     
-    str = keys[i]; i++;
-    fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    ans = keys[i]; i++;
+    fixed = [dic[ans] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     _back.hidden = true;
     [_label setString:fixed];
     [_pc setStringValue:[NSString stringWithFormat:@"0 %%"]];
 }
 
 - (void)say:(id)sender {
-    [speech startSpeakingString:str];
+    [speech startSpeakingString:fixed];
     [_play setAction:@selector(stop:)];
     [_play setTitle:@" ■"];
 }
@@ -170,15 +173,15 @@ static int i = 0;
             [_progress setDoubleValue:i];
         } else [_progress incrementBy:1.0];
         
-        str = keys[i];
-        fixed = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        ans = keys[i];
+        fixed = [dic[ans] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         [_label setString:fixed];
         double prgrs = i / (double)keysize * 100;
         [_pc setStringValue:[NSString stringWithFormat:@"%1.f %%", prgrs]];
         [_btn setTitle:@"Answer"];
         _back.hidden = true;
     } else {
-        [_label setString:dic[str]];
+        [_label setString:ans];
         [_btn setTitle:@"Next"];
         _back.hidden = false;
     }
@@ -193,7 +196,7 @@ static int i = 0;
         [_btn setTitle:@"Answer"];
         _back.hidden = true;
     } else if (![_back isHidden]) {
-        [_label setString:dic[str]];
+        [_label setString:ans];
         [_btn setTitle:@"Next"];
     }
 

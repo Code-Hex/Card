@@ -97,14 +97,14 @@
         <window title="ANKICard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="370"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="370"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView fixedFrame="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-OF-Js4">
-                        <rect key="frame" x="20" y="102" width="440" height="238"/>
+                        <rect key="frame" x="20" y="112" width="440" height="238"/>
                         <clipView key="contentView" misplaced="YES" id="UBU-iQ-3b3">
                             <rect key="frame" x="1" y="1" width="223" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,10 +132,10 @@
                         </scroller>
                     </scrollView>
                     <progressIndicator fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-jS-Wd2">
-                        <rect key="frame" x="21" y="75" width="396" height="20"/>
+                        <rect key="frame" x="21" y="85" width="396" height="20"/>
                     </progressIndicator>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-t5-9BQ">
-                        <rect key="frame" x="423" y="77" width="38" height="17"/>
+                        <rect key="frame" x="423" y="87" width="38" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="NWq-PU-oKx">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -143,42 +143,42 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJh-Nw-PqU">
-                        <rect key="frame" x="384" y="15" width="82" height="32"/>
+                        <rect key="frame" x="384" y="16" width="82" height="32"/>
                         <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2pN-ic-zCr">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JHL-dQ-2ns">
-                        <rect key="frame" x="240" y="43" width="25" height="25"/>
+                        <rect key="frame" x="240" y="47" width="25" height="25"/>
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XLq-Ub-ZZA">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-Wg-ies">
-                        <rect key="frame" x="215" y="43" width="25" height="25"/>
+                        <rect key="frame" x="215" y="47" width="25" height="25"/>
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tqf-ve-yZk">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1us-UE-oZO">
-                        <rect key="frame" x="14" y="15" width="82" height="32"/>
+                        <rect key="frame" x="14" y="17" width="82" height="32"/>
                         <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0Q-0c-u1t">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ah8-kc-B7e">
-                        <rect key="frame" x="345" y="10" width="39" height="38"/>
+                        <rect key="frame" x="345" y="11" width="39" height="38"/>
                         <buttonCell key="cell" type="round" title="▶︎" bezelStyle="circular" imagePosition="below" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="wSD-ZZ-b3O">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="13" name="LucidaGrande"/>
                         </buttonCell>
                     </button>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Zz-od-DW9">
-                        <rect key="frame" x="191" y="16" width="100" height="26"/>
+                        <rect key="frame" x="158" y="20" width="166" height="26"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="se3-Fo-WCS">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
@@ -187,7 +187,7 @@
                     </popUpButton>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="16" y="55"/>
+            <point key="canvasLocation" x="16" y="100"/>
         </window>
     </objects>
 </document>
