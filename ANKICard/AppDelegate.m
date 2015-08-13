@@ -81,6 +81,7 @@ static int i = 0;
     }
     
     [self fileswitch:[_filemenu itemAtIndex:0]];
+    now_setFile = [_filemenu itemAtIndex:0].title;
 
     AudioServicesPlaySystemSound(start);
     
@@ -103,32 +104,33 @@ static int i = 0;
     NSString *filename = ItemName.title;
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *path = [bundle pathForResource:filename ofType:@"plist"];
+    if (![now_setFile isEqualToString:filename]) {
+        now_setFile = filename;
+        dic = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+        keys = [[dic allKeys] mutableCopy];
+        keysize = [keys count];
+        
+        [self shuffle]; i = 0;
+        [_progress setMaxValue:keysize];
+        [_progress setDoubleValue:i];
     
-    dic = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-    keys = [[dic allKeys] mutableCopy];
-    keysize = [keys count];
-    
-    [self shuffle];
-    i = 0;
-    [_progress setMaxValue:keysize];
-    [_progress setDoubleValue:i];
-    
-    ans = keys[i]; i++;
-    fixed = [dic[ans] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    _back.hidden = true;
-    [_label setString:fixed];
-    [_pc setStringValue:[NSString stringWithFormat:@"0 %%"]];
+        ans = keys[i]; i++;
+        fixed = [dic[ans] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        _back.hidden = true;
+        [_label setString:fixed];
+        [_pc setStringValue:[NSString stringWithFormat:@"0 %%"]];
+    }
 }
 
 - (void)say:(id)sender {
     [speech startSpeakingString:fixed];
     [_play setAction:@selector(stop:)];
-    [_play setTitle:@" ■"];
+    [_play setTitle:@"Stop"];
 }
 
 - (void)stop:(id)sender {
     [speech stopSpeaking];
-    [_play setTitle:@"▶︎"];
+    [_play setTitle:@"Play"];
     [_play setAction:@selector(say:)];
 }
 
@@ -229,7 +231,31 @@ static int i = 0;
     
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     AudioServicesPlaySystemSound(exit);
-    [NSThread sleepForTimeInterval:3.1f];
+    NSDate *Start = [NSDate date];
+    NSPoint pos;
+    pos.x = self.window.frame.origin.x;
+    pos.y = self.window.frame.origin.y;
+    NSRect frame = [[NSScreen mainScreen] visibleFrame];
+    CGFloat max_height = frame.origin.y + frame.size.height - self.window.frame.size.height;
+    CGFloat min_height = frame.origin.y - frame.size.height + self.window.frame.size.height;
+
+    for (NSInteger i = 1; max_height >= pos.y; i++) {
+        pos.y += i;
+        [self.window setFrame:CGRectMake(pos.x,
+                                         pos.y,
+                                         self.window.frame.size.width,
+                                         self.window.frame.size.height) display:YES];
+    }
+    for (NSInteger i = 1; pos.y >= min_height; i++) {
+        pos.y -= i;
+        [self.window setFrame:CGRectMake(pos.x,
+                                         pos.y,
+                                         self.window.frame.size.width,
+                                         self.window.frame.size.height) display:YES];
+    }
+    [self.window close];
+    CGFloat stop = [[NSDate date] timeIntervalSinceDate:Start];
+    [NSThread sleepForTimeInterval:3.1f - stop];
     NSLog(@"Good Bye!!");
 }
 

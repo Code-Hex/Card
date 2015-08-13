@@ -170,13 +170,6 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ah8-kc-B7e">
-                        <rect key="frame" x="345" y="11" width="39" height="38"/>
-                        <buttonCell key="cell" type="round" title="▶︎" bezelStyle="circular" imagePosition="below" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="wSD-ZZ-b3O">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" size="13" name="LucidaGrande"/>
-                        </buttonCell>
-                    </button>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Zz-od-DW9">
                         <rect key="frame" x="158" y="20" width="166" height="26"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="se3-Fo-WCS">
@@ -185,6 +178,13 @@
                             <menu key="menu" id="xMo-Vc-aFF"/>
                         </popUpButtonCell>
                     </popUpButton>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ah8-kc-B7e">
+                        <rect key="frame" x="323" y="16" width="61" height="32"/>
+                        <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="wSD-ZZ-b3O">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="16" y="100"/>

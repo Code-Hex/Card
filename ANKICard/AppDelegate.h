@@ -9,13 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import <AudioToolbox/AudioServices.h>
 
-@interface AppDelegate : NSWindow <NSApplicationDelegate,NSSpeechSynthesizerDelegate,NSMenuDelegate> {
+@interface AppDelegate : NSWindow <NSApplicationDelegate,NSSpeechSynthesizerDelegate> {
     SystemSoundID start, up, exit;
     NSInteger keysize;
     NSMutableDictionary *dic;
     NSMutableArray *filelist;
     NSMutableArray *keys;
     NSString *ans;
+    NSString *now_setFile;
     NSString *fixed;
     NSSpeechSynthesizer *speech;
 }
