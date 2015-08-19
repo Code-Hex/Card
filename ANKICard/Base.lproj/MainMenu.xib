@@ -14,16 +14,17 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="back" destination="1us-UE-oZO" id="eZR-GF-dqk"/>
-                <outlet property="btn" destination="KJh-Nw-PqU" id="nPS-sA-cud"/>
+                <outlet property="View" destination="EiT-Mj-1SZ" id="SRx-GN-GZ3"/>
+                <outlet property="barview" destination="rJc-Qg-Cru" id="mqY-uA-cYc"/>
+                <outlet property="bfbutton" destination="Wu0-Dh-JnA" id="Upt-w0-Lqr"/>
                 <outlet property="decrement" destination="bXm-Wg-ies" id="WUM-jK-oph"/>
-                <outlet property="filemenu" destination="xMo-Vc-aFF" id="lej-kS-r7z"/>
+                <outlet property="filemenu" destination="KwP-Yq-NPQ" id="rvG-of-pNI"/>
                 <outlet property="increment" destination="JHL-dQ-2ns" id="BL0-5h-QQP"/>
                 <outlet property="label" destination="Wq7-vm-Tqi" id="8pJ-Wq-Xgs"/>
                 <outlet property="pc" destination="N4g-t5-9BQ" id="kLQ-Gz-iFA"/>
                 <outlet property="play" destination="ah8-kc-B7e" id="gcy-L5-qf1"/>
                 <outlet property="progress" destination="JKO-jS-Wd2" id="Fw3-EW-emi"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="MVX-Fl-uoe"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -94,29 +95,29 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="ANKICard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="ANKICard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="INAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="370"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
+            <view key="contentView" id="EiT-Mj-1SZ" customClass="KGNoiseRadialGradientView">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="370"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView fixedFrame="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-OF-Js4">
+                    <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-OF-Js4">
                         <rect key="frame" x="20" y="112" width="440" height="238"/>
                         <clipView key="contentView" misplaced="YES" id="UBU-iQ-3b3">
                             <rect key="frame" x="1" y="1" width="223" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Wq7-vm-Tqi">
-                                    <rect key="frame" x="0.0" y="0.0" width="223" height="234"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="238"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="436" height="234"/>
+                                    <size key="minSize" width="440" height="238"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="436" height="234"/>
+                                    <size key="minSize" width="440" height="238"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -133,6 +134,12 @@
                     </scrollView>
                     <progressIndicator fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-jS-Wd2">
                         <rect key="frame" x="21" y="85" width="396" height="20"/>
+                        <ciFilter key="compositingFilter" name="CIColorBlendMode">
+                            <configuration>
+                                <null key="inputBackgroundImage"/>
+                                <null key="inputImage"/>
+                            </configuration>
+                        </ciFilter>
                     </progressIndicator>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-t5-9BQ">
                         <rect key="frame" x="423" y="87" width="38" height="17"/>
@@ -142,13 +149,6 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJh-Nw-PqU">
-                        <rect key="frame" x="384" y="16" width="82" height="32"/>
-                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2pN-ic-zCr">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JHL-dQ-2ns">
                         <rect key="frame" x="240" y="47" width="25" height="25"/>
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XLq-Ub-ZZA">
@@ -163,23 +163,8 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1us-UE-oZO">
-                        <rect key="frame" x="14" y="17" width="82" height="32"/>
-                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0Q-0c-u1t">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Zz-od-DW9">
-                        <rect key="frame" x="158" y="20" width="166" height="26"/>
-                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="se3-Fo-WCS">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="xMo-Vc-aFF"/>
-                        </popUpButtonCell>
-                    </popUpButton>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ah8-kc-B7e">
-                        <rect key="frame" x="323" y="16" width="61" height="32"/>
+                        <rect key="frame" x="209" y="16" width="62" height="32"/>
                         <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="wSD-ZZ-b3O">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -187,7 +172,35 @@
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="16" y="100"/>
+            <connections>
+                <binding destination="Voe-Tx-rLC" name="representedFilename" keyPath="self.window" id="ARU-vm-ZRV"/>
+            </connections>
+            <point key="canvasLocation" x="7" y="125"/>
         </window>
+        <customView id="rJc-Qg-Cru" customClass="KGNoiseRadialGradientView">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xx6-jO-Gyf">
+                    <rect key="frame" x="338" y="7" width="125" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Bco-Lf-nfq">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="KwP-Yq-NPQ"/>
+                    </popUpButtonCell>
+                </popUpButton>
+                <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvE-h1-jC8">
+                    <rect key="frame" x="6" y="8" width="57" height="24"/>
+                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="momentary" id="Wu0-Dh-JnA">
+                        <font key="font" size="11" name="Sathu"/>
+                        <segments>
+                            <segment label="◀︎" width="25"/>
+                            <segment label="▶︎" width="25" tag="1"/>
+                        </segments>
+                    </segmentedCell>
+                </segmentedControl>
+            </subviews>
+            <point key="canvasLocation" x="7" y="411"/>
+        </customView>
     </objects>
 </document>
