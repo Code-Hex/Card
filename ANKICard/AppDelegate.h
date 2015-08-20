@@ -12,7 +12,7 @@
 #import "INWindowButton.h"
 #import "KGNoise.h"
 
-@interface AppDelegate : NSWindow <NSApplicationDelegate,NSSpeechSynthesizerDelegate,NSTextViewDelegate> {
+@interface AppDelegate : NSWindow <NSApplicationDelegate,NSWindowDelegate,NSSpeechSynthesizerDelegate,NSTextViewDelegate> {
     SystemSoundID start, up, exit;
     NSInteger keysize;
     NSMutableDictionary *dic;

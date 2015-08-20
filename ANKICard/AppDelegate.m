@@ -19,12 +19,10 @@ static int i = 0;
         NSLog(@"init");
         NSString *voice_name = @"com.apple.speech.synthesis.voice.kyoko.premium";
         isVoice = NO;
-        for (NSString *name in [NSSpeechSynthesizer availableVoices]) {
-            if ([name isEqualToString:voice_name]) {
-                speech = [[NSSpeechSynthesizer alloc] initWithVoice:voice_name];
-                isVoice = YES;
-                break;
-            }
+        NSUInteger index = [[NSSpeechSynthesizer availableVoices] indexOfObject:voice_name];
+        if (index != NSNotFound) {
+            speech = [[NSSpeechSynthesizer alloc] initWithVoice:voice_name];
+            isVoice = YES;
         }
         
         keys = [[NSMutableArray alloc] init];
@@ -35,7 +33,7 @@ static int i = 0;
                      ^(id o1, id o2) {
                          return [o1 compare:o2];
                      }]];
-        [speech setDelegate:self];
+        speech.delegate = self;
     }
     
     return self;
@@ -44,6 +42,7 @@ static int i = 0;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
+    self.window.delegate = self;
     self.window.movableByWindowBackground = YES;
     self.window.hasShadow = YES;
     self.window.titleBarHeight = 60.0;
@@ -57,12 +56,12 @@ static int i = 0;
     [shadow setShadowBlurRadius:0.5];
     self.window.titleBarView.shadow = shadow;
      */
-    [self.window setRepresentedURL:nil]; // hide document proxy icon
-    _barview.noiseBlendMode = kCGBlendModeMultiply;
-    _barview.noiseOpacity = 0.15;
-    _barview.backgroundColor = NSColor.clearColor;
+    self.window.representedURL = nil; // hide document proxy icon
+    self.barview.noiseBlendMode = kCGBlendModeMultiply;
+    self.barview.noiseOpacity = 0.15;
+    self.barview.backgroundColor = NSColor.clearColor;
     
-    [self.window.titleBarView addSubview:_barview];
+    [self.window.titleBarView addSubview:self.barview];
     
     [self.window setTitleBarDrawingBlock:^(BOOL drawsAsMainWindow, CGRect drawingRect, CGRectEdge edge, CGPathRef clippingPath){
 
@@ -98,7 +97,7 @@ static int i = 0;
     self.View.noiseOpacity = 0.05;
     self.View.backgroundColor = NSColor.whiteColor;
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *ud = NSUserDefaults.standardUserDefaults;
     if (![ud floatForKey:@"fontsize"]) {
         [ud setFloat:12.0 forKey:@"fontsize"];
         [ud synchronize];
@@ -316,7 +315,11 @@ static int i = 0;
     [pasteBoard declareTypes:[NSArray arrayWithObject:NSStringPboardType] owner:nil];
     return [pasteBoard setString:stringToWrite forType:NSStringPboardType];
 }
-    
+
+- (void)windowWillClose:(NSNotification *)notification {
+    [NSApp terminate:self];
+}
+
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     AudioServicesPlaySystemSound(exit);
     NSDate *Start = [NSDate date]; // time
@@ -371,10 +374,6 @@ static int i = 0;
                 [NSApp terminate:self];
             break;
     }
-}
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
-    return YES;
 }
 
 @end
