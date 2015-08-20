@@ -13,6 +13,7 @@
 		701B23031B65ECC70024DA6B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701B23011B65ECC70024DA6B /* MainMenu.xib */; };
 		701B230F1B65ECC70024DA6B /* ANKICardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 701B230E1B65ECC70024DA6B /* ANKICardTests.m */; };
 		701B23191B65ED510024DA6B /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 701B23181B65ED510024DA6B /* test.plist */; };
+		702A025C1B857BE9006B6A1B /* CardMakerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 702A025B1B857BE9006B6A1B /* CardMakerWindow.m */; };
 		705D1EF81B82CCBB000BC69D /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 705D1EF71B82CCBB000BC69D /* KGNoise.m */; };
 		705D1EFB1B84C2ED000BC69D /* ANKITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 705D1EFA1B84C2ED000BC69D /* ANKITextView.m */; };
 		7074A18E1B67E55E00158CE1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7074A18D1B67E55E00158CE1 /* AudioToolbox.framework */; };
@@ -24,7 +25,7 @@
 		70EAC7321B7DAC6300E0A672 /* NSDocument+INAppStoreWindowFixes.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EAC72A1B7DAC6300E0A672 /* NSDocument+INAppStoreWindowFixes.m */; };
 		70EAC7331B7DAC6300E0A672 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EAC72C1B7DAC6300E0A672 /* INAppStoreWindow.m */; };
 		70EAC7341B7DAC6300E0A672 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EAC72F1B7DAC6300E0A672 /* INWindowButton.m */; };
-		70F487411B80D4DE0099891C /* ANKICardWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F487401B80D4DE0099891C /* ANKICardWindowController.m */; };
+		70F487411B80D4DE0099891C /* CardMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F487401B80D4DE0099891C /* CardMakerViewController.m */; };
 		70FDDAB41B764EFD0047F521 /* comsys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70FDDAB31B764EFD0047F521 /* comsys.plist */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		701B230D1B65ECC70024DA6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		701B230E1B65ECC70024DA6B /* ANKICardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKICardTests.m; sourceTree = "<group>"; };
 		701B23181B65ED510024DA6B /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
+		702A025A1B857BA9006B6A1B /* CardMakerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMakerWindow.h; sourceTree = "<group>"; };
+		702A025B1B857BE9006B6A1B /* CardMakerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMakerWindow.m; sourceTree = "<group>"; };
 		705D1EF61B82CCBB000BC69D /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGNoise.h; sourceTree = "<group>"; };
 		705D1EF71B82CCBB000BC69D /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGNoise.m; sourceTree = "<group>"; };
 		705D1EF91B84C2ED000BC69D /* ANKITextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANKITextView.h; sourceTree = "<group>"; };
@@ -69,8 +72,8 @@
 		70EAC72D1B7DAC6300E0A672 /* INAppStoreWindowCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindowCompatibility.h; sourceTree = "<group>"; };
 		70EAC72E1B7DAC6300E0A672 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWindowButton.h; sourceTree = "<group>"; };
 		70EAC72F1B7DAC6300E0A672 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INWindowButton.m; sourceTree = "<group>"; };
-		70F4873F1B80D4DE0099891C /* ANKICardWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANKICardWindowController.h; sourceTree = "<group>"; };
-		70F487401B80D4DE0099891C /* ANKICardWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANKICardWindowController.m; sourceTree = "<group>"; };
+		70F4873F1B80D4DE0099891C /* CardMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMakerViewController.h; sourceTree = "<group>"; };
+		70F487401B80D4DE0099891C /* CardMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMakerViewController.m; sourceTree = "<group>"; };
 		70FDDAB31B764EFD0047F521 /* comsys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = comsys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,8 +124,10 @@
 				701B22FB1B65ECC70024DA6B /* AppDelegate.m */,
 				705D1EF91B84C2ED000BC69D /* ANKITextView.h */,
 				705D1EFA1B84C2ED000BC69D /* ANKITextView.m */,
-				70F4873F1B80D4DE0099891C /* ANKICardWindowController.h */,
-				70F487401B80D4DE0099891C /* ANKICardWindowController.m */,
+				702A025A1B857BA9006B6A1B /* CardMakerWindow.h */,
+				702A025B1B857BE9006B6A1B /* CardMakerWindow.m */,
+				70F4873F1B80D4DE0099891C /* CardMakerViewController.h */,
+				70F487401B80D4DE0099891C /* CardMakerViewController.m */,
 				70FDDAB31B764EFD0047F521 /* comsys.plist */,
 				701B23181B65ED510024DA6B /* test.plist */,
 				701B22FF1B65ECC70024DA6B /* Images.xcassets */,
@@ -309,9 +314,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				705D1EF81B82CCBB000BC69D /* KGNoise.m in Sources */,
+				702A025C1B857BE9006B6A1B /* CardMakerWindow.m in Sources */,
 				70EAC7311B7DAC6300E0A672 /* INWindowBackgroundView+CoreUIRendering.m in Sources */,
 				70EAC7321B7DAC6300E0A672 /* NSDocument+INAppStoreWindowFixes.m in Sources */,
-				70F487411B80D4DE0099891C /* ANKICardWindowController.m in Sources */,
+				70F487411B80D4DE0099891C /* CardMakerViewController.m in Sources */,
 				701B22FE1B65ECC70024DA6B /* main.m in Sources */,
 				70EAC7301B7DAC6300E0A672 /* INAppStoreWindowSwizzling.c in Sources */,
 				70EAC7331B7DAC6300E0A672 /* INAppStoreWindow.m in Sources */,

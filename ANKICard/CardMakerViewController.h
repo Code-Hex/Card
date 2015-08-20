@@ -1,5 +1,5 @@
 //
-//  ANKICardWindowController.h
+//  CardMakerViewController.h
 //  ANKICard
 //
 //  Created by CodeHex on 2015/08/16.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ANKICardWindowController : NSWindowController {
+@interface CardMakerViewController : NSViewController {
 @private
     
 }

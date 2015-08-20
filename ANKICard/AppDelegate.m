@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ANKICardWindowController.h"
+#import "CardMakerViewController.h"
 #import "ANKITextView.h"
 
 @implementation AppDelegate
@@ -17,7 +17,16 @@ static int i = 0;
 -(id)init {
     if (self = [super init]) {
         NSLog(@"init");
-        speech = [[NSSpeechSynthesizer alloc] initWithVoice:@"com.apple.speech.synthesis.voice.kyoko.premium"];
+        NSString *voice_name = @"com.apple.speech.synthesis.voice.kyoko.premium";
+        isVoice = NO;
+        for (NSString *name in [NSSpeechSynthesizer availableVoices]) {
+            if ([name isEqualToString:voice_name]) {
+                speech = [[NSSpeechSynthesizer alloc] initWithVoice:voice_name];
+                isVoice = YES;
+                break;
+            }
+        }
+        
         keys = [[NSMutableArray alloc] init];
         
         NSArray *ary = [self getFileList:@".plist"];
@@ -95,9 +104,10 @@ static int i = 0;
         [ud synchronize];
     }
     
-    _label.editable = NO;
-    _label.delegate = self;
-    [_label setTextContainerInset:NSMakeSize(0, 10)]; // Padding NSTextView
+    self.play.enabled = isVoice;
+    self.textview.editable = NO;
+    self.textview.delegate = self;
+    [self.textview setTextContainerInset:NSMakeSize(0, 10)]; // Padding NSTextView
 
     // from popupmenu
     NSInteger cnt = 0;
@@ -138,18 +148,23 @@ static int i = 0;
     [self.window makeFirstResponder:self];
     
     status = @"Answer";
-    [_label setFont:[NSFont systemFontOfSize:fontsize]];
-    [_increment setTitle:@"+"];
-    [_decrement setTitle:@"-"];
+    [self.textview setFont:[NSFont systemFontOfSize:fontsize]];
+    [self.increment setTitle:@"+"];
+    [self.decrement setTitle:@"-"];
 
-    [_bfbutton setAction:@selector(navigate:)];
-    [_increment setAction:@selector(fontsizeincrement)];
-    [_decrement setAction:@selector(fontsizedecrement)];
-    [_play setAction:@selector(say)];
+    [self.bfbutton setAction:@selector(navigate:)];
+    [self.increment setAction:@selector(fontsizeincrement)];
+    [self.decrement setAction:@selector(fontsizedecrement)];
+    [self.play setAction:@selector(say)];
+}
+
+- (void)cardmaker {
+    //CardMakerViewController *cardmaker = [[CardMakerViewController alloc] init];
 }
 
 - (void)navigate:(NSSegmentedControl*)control {
-    switch ([control selectedSegment]) {
+    
+    switch (control.selectedSegment) {
         case 0:
             [self pushtoback];
             break;
@@ -175,33 +190,29 @@ static int i = 0;
         
         ans = keys[i];
         fixed = [dic[ans] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        [_label setString:fixed];
+        [self.textview setString:fixed];
         double prgrs = i / (double)keysize * 100;
         [_pc setStringValue:[NSString stringWithFormat:@"%1.f %%", prgrs]];
-        [_bfbutton setEnabled:NO forSegment:0];
+        [self.bfbutton setEnabled:NO forSegment:0];
         status = @"Answer";
     } else {
-        [_label setString:ans];
-        [_bfbutton setEnabled:YES forSegment:0];
+        [self.textview setString:ans];
+        [self.bfbutton setEnabled:YES forSegment:0];
         status = @"Next";
         
     }
-    
-    [self.window makeFirstResponder:self];
 }
 
 -(void)pushtoback {
     
     if ([status isEqualToString:@"Next"]) {
-        [_label setString:fixed];
-        [_bfbutton setEnabled:NO forSegment:0];
+        [self.textview setString:fixed];
+        [self.bfbutton setEnabled:NO forSegment:0];
         status = @"Answer";
-    } else if ([_bfbutton isEnabledForSegment:0]) {
-        [_label setString:ans];
+    } else if ([self.bfbutton isEnabledForSegment:0]) {
+        [self.textview setString:ans];
         status = @"Next";
     }
-    
-    [self.window makeFirstResponder:self];
 }
 
 - (void)fileswitch:(NSMenuItem *)ItemName {
@@ -221,26 +232,26 @@ static int i = 0;
     
         ans = keys[i]; i++;
         fixed = [dic[ans] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        [_bfbutton setEnabled:NO forSegment:0];
-        [_label setString:fixed];
+        [self.bfbutton setEnabled:NO forSegment:0];
+        [self.textview setString:fixed];
         [_pc setStringValue:[NSString stringWithFormat:@"0 %%"]];
     }
 }
 
 - (void)say {
     [speech startSpeakingString:fixed];
-    [_play setAction:@selector(stop)];
-    [_play setTitle:@"Stop"];
+    [self.play setAction:@selector(stop)];
+    [self.play setTitle:@"Stop"];
 }
 
 - (void)stop {
     [speech stopSpeaking];
-    [_play setTitle:@"Play"];
-    [_play setAction:@selector(say)];
+    [self.play setTitle:@"Say"];
+    [self.play setAction:@selector(say)];
 }
 
 - (void)speechSynthesizer:(NSSpeechSynthesizer *)sender didFinishSpeaking:(BOOL)finishedSpeaking {
-    [self performSelector:@selector(stop:) withObject:self];
+    [self stop];
 }
 
 -(void)fontsizeincrement {
@@ -263,10 +274,9 @@ static int i = 0;
 }
 
 -(void)store:(CGFloat)fontsize data:(NSUserDefaults*)ud {
-    [_label setFont:[NSFont systemFontOfSize:fontsize]];
+    [self.textview setFont:[NSFont systemFontOfSize:fontsize]];
     [ud setFloat:fontsize forKey:@"fontsize"];
     [ud synchronize];
-    [self.window makeFirstResponder:self];
 }
     
 - (void)shuffle {
@@ -294,7 +304,7 @@ static int i = 0;
 }
 
 - (void)textViewDidChangeSelection:(NSNotification *)aNotification {
-    copy = [_label.string substringWithRange:_label.selectedRange];
+    copy = [self.textview.string substringWithRange:self.textview.selectedRange];
 }
 
 - (void)CopyOntextView {

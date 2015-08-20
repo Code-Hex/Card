@@ -19,13 +19,14 @@
     NSMutableArray *filelist, *keys;
     NSString *ans, *now_setFile, *fixed, *status, *copy;
     NSSpeechSynthesizer *speech;
+    BOOL isVoice;
 }
 
 @property (weak) IBOutlet INAppStoreWindow *window;
 @property (weak) IBOutlet KGNoiseRadialGradientView *View;
 @property (weak) IBOutlet NSButton *decrement;
 @property (weak) IBOutlet NSButton *increment;
-@property (unsafe_unretained) IBOutlet NSTextView *label;
+@property (unsafe_unretained) IBOutlet NSTextView *textview;
 @property (weak) IBOutlet NSProgressIndicator *progress;
 @property (weak) IBOutlet NSTextField *pc;
 @property (weak) IBOutlet NSButton *play;

@@ -20,14 +20,15 @@
                 <outlet property="decrement" destination="bXm-Wg-ies" id="WUM-jK-oph"/>
                 <outlet property="filemenu" destination="KwP-Yq-NPQ" id="rvG-of-pNI"/>
                 <outlet property="increment" destination="JHL-dQ-2ns" id="BL0-5h-QQP"/>
-                <outlet property="label" destination="Wq7-vm-Tqi" id="8pJ-Wq-Xgs"/>
                 <outlet property="pc" destination="N4g-t5-9BQ" id="kLQ-Gz-iFA"/>
                 <outlet property="play" destination="ah8-kc-B7e" id="gcy-L5-qf1"/>
                 <outlet property="progress" destination="JKO-jS-Wd2" id="Fw3-EW-emi"/>
+                <outlet property="textview" destination="Wq7-vm-Tqi" id="7e3-CD-jW6"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="MVX-Fl-uoe"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <viewController id="PZa-qC-kK2" customClass="CardMakerViewController"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="ANKICard" id="1Xt-HY-uBw">
@@ -98,7 +99,7 @@
         <window title="ANKICard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="INAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="370"/>
+            <rect key="contentRect" x="443" y="300" width="480" height="370"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
             <view key="contentView" id="EiT-Mj-1SZ" customClass="KGNoiseRadialGradientView">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="370"/>
@@ -134,12 +135,6 @@
                     </scrollView>
                     <progressIndicator fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-jS-Wd2">
                         <rect key="frame" x="21" y="85" width="396" height="20"/>
-                        <ciFilter key="compositingFilter" name="CIColorBlendMode">
-                            <configuration>
-                                <null key="inputBackgroundImage"/>
-                                <null key="inputImage"/>
-                            </configuration>
-                        </ciFilter>
                     </progressIndicator>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-t5-9BQ">
                         <rect key="frame" x="423" y="87" width="38" height="17"/>
@@ -165,7 +160,7 @@
                     </button>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ah8-kc-B7e">
                         <rect key="frame" x="209" y="16" width="62" height="32"/>
-                        <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="wSD-ZZ-b3O">
+                        <buttonCell key="cell" type="push" title="Say" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="wSD-ZZ-b3O">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -202,5 +197,16 @@
             </subviews>
             <point key="canvasLocation" x="7" y="411"/>
         </customView>
+        <window title="CardMaker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="9BT-bH-74w" userLabel="CardMaker" customClass="CardMakerWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="130" y="229" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
+            <view key="contentView" id="Zbs-Sw-gCC">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <point key="canvasLocation" x="-708" y="75"/>
+        </window>
     </objects>
 </document>
