@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="iDI-0x-iNP"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Card" customModuleProvider="target">
+            <connections>
+                <outlet property="control" destination="nqT-3L-huN" id="iB0-q3-WeI"/>
+                <outlet property="filemenu" destination="E5L-CQ-VWa" id="rf6-Sg-jUe"/>
+                <outlet property="fontcontrol" destination="k9X-za-TV5" id="jgI-dx-uJF"/>
+                <outlet property="play" destination="wSD-ZZ-b3O" id="5x8-b7-Aif"/>
+                <outlet property="progress" destination="JKO-jS-Wd2" id="ovQ-Ok-lnA"/>
+                <outlet property="textView" destination="Wq7-vm-Tqi" id="jE0-QX-S3F"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="Cbf-uk-ha0"/>
+                <outlet property="windowbar" destination="yce-PC-L7b" id="e3g-Af-X3h"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <window title="ANKICard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="443" y="300" width="480" height="384"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="745"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="384"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-jS-Wd2">
+                        <rect key="frame" x="-5" y="340" width="490" height="12"/>
+                        <animations/>
+                    </progressIndicator>
+                    <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-OF-Js4">
+                        <rect key="frame" x="20" y="53" width="440" height="277"/>
+                        <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="UBU-iQ-3b3">
+                            <rect key="frame" x="0.0" y="0.0" width="440" height="277"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Wq7-vm-Tqi" customClass="TextView" customModule="Card" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="440" height="277"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <animations/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <size key="minSize" width="440" height="277"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="440" height="277"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                        </clipView>
+                        <animations/>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="4gc-9A-32H">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="F15-AG-GXt">
+                            <rect key="frame" x="424" y="0.0" width="16" height="277"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
+                        </scroller>
+                    </scrollView>
+                    <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dKm-lg-14n">
+                        <rect key="frame" x="20" y="18" width="61" height="24"/>
+                        <animations/>
+                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="momentary" id="k9X-za-TV5">
+                            <font key="font" metaFont="system"/>
+                            <segments>
+                                <segment label="＋" width="27"/>
+                                <segment label="−" width="27" tag="1"/>
+                            </segments>
+                        </segmentedCell>
+                    </segmentedControl>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ah8-kc-B7e">
+                        <rect key="frame" x="404" y="13" width="62" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Say" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" id="wSD-ZZ-b3O">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                </subviews>
+                <animations/>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="6D424848-BBE1-4113-86F1-5AD6577F250A" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="yce-PC-L7b">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="F58EF10F-9A50-41C5-A2A6-12491E59793B" label="Custom View" paletteLabel="Custom View" id="dlZ-rj-URw">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="100" height="26"/>
+                        <size key="maxSize" width="100" height="26"/>
+                        <popUpButton key="view" verticalHuggingPriority="750" id="4E7-XR-fzp">
+                            <rect key="frame" x="0.0" y="14" width="100" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <animations/>
+                            <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QfP-9S-Wwv">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="E5L-CQ-VWa"/>
+                            </popUpButtonCell>
+                        </popUpButton>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="75F4AB27-C0EF-487E-A975-5FF66A914369" label="Custom View" paletteLabel="Custom View" id="5db-sf-iVC">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="35" height="23"/>
+                        <size key="maxSize" width="104" height="26"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="sY3-IR-Lef">
+                            <rect key="frame" x="7" y="14" width="62" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <animations/>
+                            <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="momentary" id="nqT-3L-huN">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment label="＜" width="27"/>
+                                    <segment label="＞" width="27" tag="1"/>
+                                </segments>
+                            </segmentedCell>
+                        </segmentedControl>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="01q-Dc-PFl"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="IYa-dZ-YyK"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="dlZ-rj-URw"/>
+                    <toolbarItem reference="01q-Dc-PFl"/>
+                    <toolbarItem reference="5db-sf-iVC"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="-220" y="-23"/>
+        </window>
+    </objects>
+</document>
