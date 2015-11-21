@@ -1,6 +1,6 @@
 # Card
-~~情報ネットワークの~~テストを乗り切るために開発されたMac用アプリ
-![Download](https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true)  
+~~情報ネットワークの~~テストを乗り切るために開発されたMac用アプリ  
+[Download](https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true)  
 ![Card](https://github.com/Code-Hex/Card/blob/master/Card/Card/Assets.xcassets/AppIcon.appiconset/256.png "Card")
 ## 使い方
 
