@@ -17,6 +17,7 @@
 		705748C81BFF05B1007B2699 /* 1up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 705748C51BFF05B1007B2699 /* 1up.wav */; };
 		705748C91BFF05B1007B2699 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 705748C61BFF05B1007B2699 /* coin.wav */; };
 		705748CA1BFF05B1007B2699 /* exit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 705748C71BFF05B1007B2699 /* exit.wav */; };
+		7075B8671C00918800D3C62E /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7075B8661C00918800D3C62E /* bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		705748C51BFF05B1007B2699 /* 1up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1up.wav; sourceTree = "<group>"; };
 		705748C61BFF05B1007B2699 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
 		705748C71BFF05B1007B2699 /* exit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = exit.wav; sourceTree = "<group>"; };
+		7075B8661C00918800D3C62E /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		705748C41BFF05B1007B2699 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				7075B8661C00918800D3C62E /* bg.png */,
 				705748C51BFF05B1007B2699 /* 1up.wav */,
 				705748C61BFF05B1007B2699 /* coin.wav */,
 				705748C71BFF05B1007B2699 /* exit.wav */,
@@ -148,6 +151,7 @@
 			files = (
 				705748CA1BFF05B1007B2699 /* exit.wav in Resources */,
 				705748BF1BFEA97E007B2699 /* test.plist in Resources */,
+				7075B8671C00918800D3C62E /* bg.png in Resources */,
 				705748B21BFE27DF007B2699 /* Assets.xcassets in Resources */,
 				705748C81BFF05B1007B2699 /* 1up.wav in Resources */,
 				705748C91BFF05B1007B2699 /* coin.wav in Resources */,
@@ -170,7 +174,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nset -e\nset -u\n\nPACKAGE_NAME=Card\nAPPLICATION=$BUILT_PRODUCTS_DIR/${PACKAGE_NAME}.app\nDEST=$HOME/Desktop/${PACKAGE_NAME}.dmg\nhdiutil create -ov -srcfolder ${APPLICATION} -fs HFS+ -format UDZO -imagekey zlib-level=9 -volname ${PACKAGE_NAME} ${DEST}\nexit 0";
+			shellScript = "#!/bin/sh\nset -eu\n\nPACKAGE_NAME=Card\nAPP=${PACKAGE_NAME}.app\nAPPLICATION=${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.app\nDEST=$HOME/Desktop/${PACKAGE_NAME}.dmg\n\ncd .\n[ -e ${BUILT_PRODUCTS_DIR}/dest ] && rm -rf ${BUILT_PRODUCTS_DIR}/dest\n\nif [[ ! -e ${BUILT_PRODUCTS_DIR}/dest ]]; then\nmkdir ${BUILT_PRODUCTS_DIR}/dest\nmkdir ${BUILT_PRODUCTS_DIR}/dest/.background\nfi\n\ncp -r ${APPLICATION} ${BUILT_PRODUCTS_DIR}/dest\ncp ${APPLICATION}/Contents/Resources/bg.png ${BUILT_PRODUCTS_DIR}/dest/.background\n\nhdiutil create -ov -srcfolder ${BUILT_PRODUCTS_DIR}/dest -fs HFS+ -format UDRW -imagekey zlib-level=9 -volname ${PACKAGE_NAME} ${BUILT_PRODUCTS_DIR}/pack.temp.dmg\ndevice=$(hdiutil attach -readwrite -noverify -noautoopen ${BUILT_PRODUCTS_DIR}/pack.temp.dmg | egrep '^/dev/' | sed 1q | awk '{print $1}')\n\nBGPICT=bg.png\n\n[ -e ${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.dmg ] && rm -f ${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.dmg\n\ncd ${BUILT_PRODUCTS_DIR}\necho '\ntell application \"Finder\"\ntell disk \"'${PACKAGE_NAME}'\"\nopen\nset current view of container window to icon view\nset toolbar visible of container window to false\nset statusbar visible of container window to false\nset the bounds of container window to {400, 50, 816, 633}\nset theViewOptions to the icon view options of container window\nset arrangement of theViewOptions to not arranged\nset icon size of theViewOptions to 80\nset background picture of theViewOptions to file \".background:'${BGPICT}'\"\nmake new alias file at container window to POSIX file \"/Applications\" with properties {name:\"Applications\"}\nset position of item \"'${APP}'\" of container window to {213, 230}\nset position of item \"Applications\" of container window to {213, 480}\nupdate without registering applications\ndelay 5\nclose\nend tell\nend tell\n' | osascript\necho 'do shell script \"chmod -Rf go-w /Volumes/${PACKAGE_NAME}\" with administrator privileges' | osascript\nsync\nsync\nhdiutil detach ${device}\nhdiutil convert ${BUILT_PRODUCTS_DIR}/pack.temp.dmg -format UDZO -imagekey zlib-level=9 -o ${DEST}\nrm -f ${BUILT_PRODUCTS_DIR}/pack.temp.dmg\nrm -rf ${BUILT_PRODUCTS_DIR}/dest\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
