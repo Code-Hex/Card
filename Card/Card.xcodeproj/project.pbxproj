@@ -97,6 +97,7 @@
 				705748A81BFE27DF007B2699 /* Sources */,
 				705748A91BFE27DF007B2699 /* Frameworks */,
 				705748AA1BFE27DF007B2699 /* Resources */,
+				705748CB1C004317007B2699 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -156,6 +157,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		705748CB1C004317007B2699 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nset -e\nset -u\n\nPACKAGE_NAME=Card\nAPPLICATION=$BUILT_PRODUCTS_DIR/${PACKAGE_NAME}.app\nDEST=$HOME/Desktop/${PACKAGE_NAME}.dmg\nhdiutil create -ov -srcfolder ${APPLICATION} -fs HFS+ -format UDZO -imagekey zlib-level=9 -volname ${PACKAGE_NAME} ${DEST}\nexit 0";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		705748A81BFE27DF007B2699 /* Sources */ = {
