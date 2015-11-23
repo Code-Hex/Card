@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>
+　 　　 　　　∧__∧
+　　　　　　( ´･ω･)∧∧
+　　　　　 　/⌒ ,つ⌒ヽ)
+　　　 　 　(___　 (　　__)　
+&quot;&apos;&apos;&quot;&quot; &quot;&apos;ﾞ&apos;&apos;` &apos;ﾞ ﾞﾟ&apos;　&apos;&apos;&apos;　&apos;&apos;　&apos;&apos;&apos;　ﾟ`　ﾞ　ﾟ ﾞ&apos;&apos;`</key>
+	<string>???</string>
+	<key>情報セキュリティの三大要件</key>
+	<string>「機密性」「完全性」「可用性」</string>
+	<key>情報セキュリティの分類</key>
+	<string>物理セキュリティと論理セキュリティ</string>
+	<key>物理セキュリティ</key>
+	<string>建物や設備。インフラ周り。</string>
+	<key>論理セキュリティ</key>
+	<string>物理セキュリティ以外。さらにシステムセキュリティと人的セキュリティに分類される。</string>
+	<key>機密性</key>
+	<string>情報資産へのアクセスを許可されたものだけに制限すること。暗号化や認証、アクセス制限で実現。</string>
+	<key>完全性</key>
+	<string>情報資産が棄損や改竄されないこと。ハッシュ関数やデジタル署名、改竄検知機構（パリティチェック）、バックアップなどで実現。</string>
+	<key>可用性</key>
+	<string>情報資産やITシステムなどにアクセスする際、正常にサービスを利用できる状態に維持すること。システムの多重化で実現。</string>
+	<key>予防</key>
+	<string>脅威への具体的なセキュリティ対策の一つ。ファイアウォールの導入、OSやアプリケーションのバージョンアップ、セキュリティパッチの適用など。</string>
+	<key>抑止</key>
+	<string>脅威への具体的なセキュリティ対策の一つ。人的管理では情報セキュリティポリシーの周知・教育・実施状況の監査、技術観点では、ITシステムのリアルタイムモニタリングなど。</string>
+	<key>検知</key>
+	<string>脅威への具体的なセキュリティ対策の一つ。ウィルス対策ソフトの導入、ログの監視など。</string>
+	<key>回復</key>
+	<string>脅威への具体的なセキュリティ対策の一つ。データのバックアップ、復旧手順書の作成など。</string>
+	<key>リスクの低減</key>
+	<string>情報セキュリティリスクへの対処の一つ。システムの脆弱性に対して対策を講じること。（前述の予防や抑止に相当）</string>
+	<key>リスクの保有（受容）</key>
+	<string>情報セキュリティリスクへの対処の一つ。リスクの影響が少ない場合は、敢えてそのリスクを許容すること。</string>
+	<key>リスクの回避</key>
+	<string>情報セキュリティリスクへの対処の一つ。リスクの要因自体を排除すること。</string>
+	<key>リスクの移転</key>
+	<string>情報セキュリティリスクへの対処の一つ。リスクの要因を別の組織に移すこと。</string>
+	<key>共通鍵暗号方式</key>
+	<string>秘密を共有したい2者間で同じ鍵を使う方式。現在は、AES（Advanced Encryption Standard）の利用が推奨されている。</string>
+	<key>公開鍵暗号方式</key>
+	<string>暗号化する鍵と復号する鍵が異なる方式。RSA（開発者3名の頭文字）方式が一般的。</string>
+	<key>ハイブリッド暗号化方式</key>
+	<string>共通鍵暗号方式と公開鍵暗号方式の欠点を補い合う。共通鍵暗号化方式と公開鍵暗号化方式を組み合わせて利用する暗号方式。</string>
+	<key>デジタル署名</key>
+	<string>公開鍵暗号方式を印鑑を押した書類と同等に扱われるファイルを用いて、発信者の真正性を確保する。その印鑑を押した書類と同等に扱われるファイルの名前。</string>
+	<key>PKI（Public Key Infrastructure）</key>
+	<string>公開鍵暗号化技術の公開鍵ペアを用いて暗号化・復号やディジタル署名を利用するためのフレームワーク</string>
+	<key>セキュリティプロトコル</key>
+	<string>真正性、機密性、完全性を確保する通信技術。</string>
+	<key>SSL/TLS（Secure Socket Layer/Transport Layer Security）</key>
+	<string>Webのセキュリティプロトコル標準。</string>
+	<key>認証</key>
+	<string>ITシステムが利用者を特定する技術。</string>
+	<key>バッファオーバーフロー</key>
+	<string>CやC++で書かれたプログラムに存在する典型的な 脆弱性。プログラマが想定したメモリサイズ以上の データが書き込まれ、そのデータには不正なプログ ラムが含まれており、それが実行されてしまう。</string>
+	<key>アクセス制御</key>
+	<string>認可ポリシー従ってどのリソースにどのようにアクセスさせるかの実際の制御のこと。認証によって特定された主体に対して、許可された 操作しかできないようにするメカニズム。</string>
+	<key>ファイアウォール</key>
+	<string>外部・内部ネットワークを区別し、それらを行きかう 通信を主にIPパケットレベルで制御し内部ネットワー クの安全を維持する仕組み。</string>
+	<key>バッファオーバーフロー対策、アクセス制御、ファイアウォール</key>
+	<string>セキュリティを構成する要素。</string>
+	<key>暗号</key>
+	<string>「暗号化されたデータを見ても特別な知識なし では、意味のある情報として読めないように変換する 表記法（アルゴリズム）もしくは表記（データ）」のこと。</string>
+	<key>暗号化</key>
+	<string>暗号という処理（アルゴリズム）</string>
+	<key>暗号文</key>
+	<string>暗号化されたデータ</string>
+	<key>平文</key>
+	<string>暗号化される前のデータ</string>
+	<key>復号</key>
+	<string>暗号文から平文へ変換する処理</string>
+	<key>暗号化鍵</key>
+	<string>暗号化する際に使う特殊な情報</string>
+	<key>復号鍵</key>
+	<string>復号する際に使う特殊な情報</string>
+	<key>シーザー暗号</key>
+	<string>平文をアルファベットの文字列とすると、決められた数だけ 各文字をアルファベット順にずらす暗号方式。</string>
+	<key>バーナム暗号</key>
+	<string>一様分布性及び予測不可能性を満たした乱数列を使って 暗号化する暗号方式。</string>
+	<key>共通鍵暗号化方式</key>
+	<string>暗号化鍵と復号鍵が同一である暗号化方式</string>
+	<key>公開鍵暗号化方式</key>
+	<string>暗号化鍵（公開鍵）と復号鍵（秘密鍵）が別である暗号化方式</string>
+	<key>ブロック暗号化方式</key>
+	<string>データ撹拌部と鍵生成部から構成され、暗号化をブロック 単位で行う。</string>
+	<key>ストリーム暗号化方式</key>
+	<string>疑似乱数生成器が生成する乱数を使い、平文をビット単位 で暗号化する。</string>
+	<key>DES（Data Encryption Standard）</key>
+	<string>IBMが開発。64ビット（56ビット（パリティビット除く））単位で暗号化。</string>
+	<key>3DES</key>
+	<string>DESを3回行う（暗号化→復号→暗号化）ことで暗号強度を 高めた暗号化方式。鍵を2種類使う方法：1回目と2回目の暗号化で同じ 鍵を使用（有効鍵長:56x2=112ビット）、鍵を3種類使う方法：1回目の暗号化と復号、2回目の暗号 化の鍵が異なる。（有効鍵長:56x3=168ビット</string>
+	<key>AES（Advanced Encryption Standard）</key>
+	<string>128ビットのブロック暗号化方式。但し、鍵長は128ビット、 192ビット、256ビットの3つがある。（192,256ビット長の鍵を 使用する場合は、パディング（後述）を行う）。現在の標準的な共通鍵暗号化方式で、DESに対して安全で高速とされている。</string>
+	<key>RC4</key>
+	<string>現在はAESなどに置き換えられている。鍵長40~256ビットの可変長の暗号化方式。</string>
+	<key>同じ値を適用すると元の値に戻る性質がある。
+C = P ⊕ K
+P = C ⊕ K = ( P ⊕ K ) ⊕ K
+例. P = 1101, K = 1010 とする。
+C = 1101 ⊕ 1010 = 0111
+P = C ⊕ K = 0111 ⊕ 1010 = 1101</key>
+	<string>排他的論理和（XOR）の性質</string>
+	<key>Feistel構造</key>
+	<string>DESの仕組みの一つ。データ撹拌部のラウンド処理段階で、各ラウンドの入力データ（64ビット）が半分に分けられ、XOR及び関数 ｆ を用いて処理される構造。</string>
+	<key>入力平文を64ビット単位で分割する。
+・ 初期転置を行い、32ビット（L0,R0）に分ける。
+・ R0はそのまま次の入力L1（L1=R0）とする。①
+・ R1 = L0 ⊕ f （R0, K1）とする。②
+・ ①②を一般化した下式をn=16まで繰り返す。
+Ln = Rn-1
+Rn = Ln-1 ⊕ f （Rn-1, Kn） 
+・ R16とL16を連結して1つのブロックとし、最終転置を行って 得られた値が暗号文となる。</key>
+	<string>DESの仕組みの一つ。DESのデータ撹拌部。</string>
+	<key>・入力鍵（64ビット）を転置PC-1で56ビットに変換する。
+・左循環シフトしたC1,D1を連結し、転置PC-2で48ビットに 変換する。
+・同様に、n=2,…,16のサブ鍵を求める。</key>
+	<string>DESの仕組みの一つ。DESの鍵生成部。</string>
+	<key>パディング</key>
+	<string>平文がブロック長に満たない場合、不足部分に特定 のデータを埋め込む処理。</string>
+	<key>ブロックチェイニング</key>
+	<string>各ブロックに相関性を持たせて平文と暗号文を1対1になることを避けることで安全性を高める方法。</string>
+	<key>CBCモード</key>
+	<string>ブロックチェイニングのモードの一つ。1つ前のブロックとXORをとりその結果を暗号化するモード。</string>
+	<key>OFBモード</key>
+	<string>ブロックチェイニングのモードの一つ。初期ベクトルを次々と暗号化したものと平文のXORをとり その結果を暗号化するモード。</string>
+	<key>CTRモード</key>
+	<string>ブロックチェイニングのモードの一つ。初期ベクトルの代わりにブロック長カウンタを用いるモード。</string>
+	<key>公開鍵</key>
+	<string>RSAの仕組みの一つ。鍵の生成者が広く多くの人に配布し、それを用いて暗号化するための暗号化鍵。</string>
+	<key>秘密鍵</key>
+	<string>RSAの仕組みの一つ。ペアとなる公開鍵で暗号化された暗号文を復号できる唯一の復号鍵。</string>
+	<key>RSA</key>
+	<string>巨大な数の素因数分解が困難である性質を利用した暗号化アルゴリズム</string>
+	<key>・ 大きな素数 p と q をランダムに選ぶ。
+・ n = pq を求める（ n の長さが鍵長となる）
+・ （p-1）（q-1）と互いに素な正の整数 e を求める。
+・ ed ≡ 1（mod （p-1）（q-1））となる正の整数 d を求める。
+・ 公開鍵（暗号化鍵）として、e と n を公開する。
+・ d は秘密鍵として安全に管理する。p と q は破棄する。*重要
+・ 以上より、暗号化、復号は下記の通りとなる。
+
+暗号化: C = Me mod n （C=暗号文、M=平文）
+復号: D = Cd mod n （D=復号文（＝平文（Ｍ）））</key>
+	<string>RSAの鍵生成手順</string>
+	<key>復号演算は秘密鍵 d （d ≡ e-1（mod （p-1）（q-1））を知らなければ、巨大な数の素因数分解をしなければならず、それは数学的に困難な問題とされている。このことが安全性の根拠とされている。</key>
+	<string>RSAが安全であるとされるポイント</string>
+	<key>2つの素数を p=5 及び q=11 とする。
+・ n = pq = 55 → 55 を法とする世界を考える。
+・ （p-1）（q-1）と互いに素な正の整数を e=3 とする。 ＊互いに素＝最大公約数が 1 となる数
+・ ed ≡ 1（mod （p-1）（q-1））となる正の整数をd=27 とする。
+・ 以上より、e=3, n=55 を公開鍵、d=27 を秘密鍵とする。</key>
+	<string>RSAの演算の例</string>
+	<key>エルガマル暗号</key>
+	<string>離散対数問題の困難さを安全性の根拠とした暗号</string>
+	<key>楕円曲線暗号</key>
+	<string>楕円曲線上の離散対数問題の困難さを安全性の根拠とした暗号</string>
+	<key>DSA（Digital Signature Algorithm）</key>
+	<string>デジタル署名のみで利用可能で離散対数問題の困難さを安全性の根拠とした暗号化方式</string>
+	<key>ECDSA（Elliptic Curve Digital Signature Algorithm）</key>
+	<string>楕円曲線上の離散対数問題の困難さを安全性の根拠とした暗号化方式</string>
+	<key>Diffie-Hellman（DH）鍵共有アルゴリズム</key>
+	<string>インターネットなどの通信路で暗号化鍵（共通鍵暗号化方式の暗号化鍵）を交換するための技術</string>
+	<key>ハッシュ関数</key>
+	<string>任意の長さのデータを固定長(128-512ビット程度)に圧縮する関数</string>
+	<key>衝突困難性</key>
+	<string>hash（m） = hash（m’） （ただし、m ≠ m’）を満たすm, m’を求めるのが困難であるというハッシュ関数の性質。</string>
+	<key>MD4, MD5</key>
+	<string>128ビットのハッシュ関数。</string>
+	<key>SHA</key>
+	<string>1993年にFIPS Publication 180として策定。128ビットのハッシュ関数。</string>
+	<key>SHA-1</key>
+	<string>1995年にFIPS Publication-180-1として策定。160ビットのハッシュ関数。</string>
+	<key>SHA-224, 256, 384, 512（SHA-2）</key>
+	<string>アルゴリズムはMD5, SHA-1 を継承。鍵長が異なるハッシュ関数。</string>
+	<key>SHA-3</key>
+	<string>2012年に次世代のハッシュ関数として策定。</string>
+	<key>等価安全性</key>
+	<string>異なる暗号技術を同一尺度で安全性を示す概念</string>
+	<key>認証（主体認証）</key>
+	<string>誰にどのリソースにアクセスさせるかをあらかじめ決めること</string>
+	<key>認可</key>
+	<string>どのリソースにどのようにアクセスさせる のかのポリシーを決定・付与すること</string>
+	<key>アクセス制御リスト（ACL:Access Control List）</key>
+	<string>アクセス制御の一覧表</string>
+	<key>素朴な主体認証</key>
+	<string>利用者の目の前にあるPCなどで管理されているパスワードでの認証</string>
+	<key>認証プロトコルによる認証</key>
+	<string>インターネット等の通信路上に存在する脅威に対する対策をした認証</string>
+	<key>ID連携（IDフェデレーション）</key>
+	<string>組織間をまたいでシングルサインオン（SSO）を実現する認証</string>
+	<key>・主体の知識による認証
+・主体の所持するものによる認証
+・主体の身体的な特性による認証</key>
+	<string>主体認証の3つのカテゴリー</string>
+	<key>2要素認証（多要素認証）</key>
+	<string>主体認証を2つ組み合わせる認証</string>
+	<key>パスワード認証、パスフレーズ認証、PIN（Personal Identification Number</key>
+	<string>主体の知識による認証 3 つ</string>
+	<key>ワンタイムパスワード（OTP: One Time Password）</key>
+	<string>認証の際に1度だけ使用するパスワード</string>
+	<key>バイオメトリクス認証（生体認証）</key>
+	<string>指紋、虹彩、静脈パターンなどを用いる認証。</string>
+	<key>ID連携</key>
+	<string>利用者のID情報及びそれに付随する属性情報を、 別々の組織で運営されているサービス間で連携して交換する仕組み</string>
+	<key>SAML、OpenID</key>
+	<string>ID連携の標準技術</string>
+	<key>SSO（Single Sign On）</key>
+	<string>利用するサービスごとにログインし直さずともサービスを利用できる仕組み</string>
+	<key>SAML（Security Assertion Markup Language）</key>
+	<string>OASISによって策定された認証・認可プロトコル</string>
+	<key>OpenID</key>
+	<string>URL形式のIDを用いるのが特徴なID
+例:  https://example.com/Cifq4SRHabyY3YAaFAg</string>
+	<key>HTTPS（HyperText Transfer Protocol over Secure Socket Layer）</key>
+	<string>SSL/TLS（Secure Socket Layer / Transport Later Security） 通信路上でHTTPを利用する通信プロトコル</string>
+	<key>トラストモデル</key>
+	<string>「誰か（何か）」が本物であるかを確認する仕組みであり、公開鍵をインターネットなどの通信路を使って配布 する際、所有者を確認する仕組み</string>
+	<key>Web of Trustモデル</key>
+	<string>公開鍵の所有者を、自身が信頼できる人物に保証し てもらう仕組み</string>
+	<key>認証局モデル</key>
+	<string>信頼できる第三者機関（TTP:Trusted Third Party）に公開鍵の所有者を保証してもらう仕組み</string>
+	<key>認証局、登録局、リポジトリ、証明書所有者、証明書利用者</key>
+	<string>PKIを構成する主体 5 つ</string>
+	<key>パブリック認証局</key>
+	<string>広く信頼されている機関が運営している認証局。一般的なOSやブラウザに予め同梱されている場合が多い。</string>
+	<key>プライベート認証局</key>
+	<string>企業等の組織内で独自に運営される認証局</string>
+	<key> EV（Extended Validation） SSL証明書</key>
+	<string>厳密な認証プロセスに基づいて発行される証明書</string>
+	<key>サーバー証明書</key>
+	<string>サーバーを識別するための証明書</string>
+	<key>クライアント証明書</key>
+	<string>クライアントを識別するための証明書</string>
+	<key>ルート証明書（自己署名証明書）</key>
+	<string>認証局が自らの秘密鍵で署名する証明書</string>
+	<key>証明書チェーン</key>
+	<string>HTTPSサーバーはクライアントにサーバー証明書とルート証明書の組を送信し、クライアントは、ルート証明書及びサーバー証明書を検証する。このような証明書に関する流れのこと</string>
+	<key>CRL（CRL: Certificate Revocation List）モデル</key>
+	<string>認証局が失効された証明書リストを定期公開する方式</string>
+	<key>OCSP（Online Certificate Status Protocol）モデル</key>
+	<string>証明書の正当性をリアルタイムで確認可能</string>
+</dict>
+</plist>

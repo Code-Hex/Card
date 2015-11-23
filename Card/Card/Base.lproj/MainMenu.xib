@@ -14,25 +14,34 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Card" customModuleProvider="target">
             <connections>
+                <outlet property="PreferenceView" destination="sxc-Il-VLx" id="fWD-5K-1jQ"/>
+                <outlet property="alphaslider" destination="6dU-cW-ZcS" id="jDo-fp-iIl"/>
+                <outlet property="apptitle" destination="CmQ-mA-0Ls" id="joE-pZ-Huu"/>
+                <outlet property="author" destination="9XW-Ze-j5h" id="7GB-Gl-X5L"/>
+                <outlet property="config" destination="uwU-Zb-jSn" id="Uuh-sr-QfP"/>
                 <outlet property="control" destination="nqT-3L-huN" id="iB0-q3-WeI"/>
                 <outlet property="filemenu" destination="E5L-CQ-VWa" id="rf6-Sg-jUe"/>
                 <outlet property="fontcontrol" destination="k9X-za-TV5" id="jgI-dx-uJF"/>
+                <outlet property="modelabel" destination="wr0-SU-hai" id="xZx-OM-be1"/>
                 <outlet property="play" destination="wSD-ZZ-b3O" id="5x8-b7-Aif"/>
+                <outlet property="preference" destination="xXf-2p-IYf" id="blP-IV-tZW"/>
                 <outlet property="progress" destination="JKO-jS-Wd2" id="ovQ-Ok-lnA"/>
+                <outlet property="setSwitch" destination="lMR-9H-f5x" id="OQC-wU-6IT"/>
                 <outlet property="textView" destination="Wq7-vm-Tqi" id="jE0-QX-S3F"/>
+                <outlet property="version" destination="A8f-iX-OR8" id="tQR-Mx-Wab"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="Cbf-uk-ha0"/>
                 <outlet property="windowbar" destination="yce-PC-L7b" id="e3g-Af-X3h"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <window title="ANKICard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="Card" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="443" y="300" width="480" height="384"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="745"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="384"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-jS-Wd2">
                         <rect key="frame" x="-5" y="340" width="490" height="12"/>
@@ -90,6 +99,11 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dU-cW-ZcS">
+                        <rect key="frame" x="192" y="18" width="96" height="21"/>
+                        <animations/>
+                        <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="KfU-zn-RBa"/>
+                    </slider>
                 </subviews>
                 <animations/>
             </view>
@@ -129,14 +143,99 @@
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="01q-Dc-PFl"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="IYa-dZ-YyK"/>
+                    <toolbarItem implicitItemIdentifier="70CA96DA-5E47-4E63-B333-FB3A9A7FB32A" label="Card Preference" paletteLabel="Card Preference" id="EK4-GR-5MX">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="31" height="19"/>
+                        <size key="maxSize" width="32" height="19"/>
+                        <button key="view" verticalHuggingPriority="750" id="ohr-sO-rQo">
+                            <rect key="frame" x="31" y="14" width="31" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <animations/>
+                            <buttonCell key="cell" type="roundTextured" title="B" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uwU-Zb-jSn">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="13" name="ArialUnicodeMS"/>
+                            </buttonCell>
+                        </button>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
-                    <toolbarItem reference="dlZ-rj-URw"/>
-                    <toolbarItem reference="01q-Dc-PFl"/>
                     <toolbarItem reference="5db-sf-iVC"/>
+                    <toolbarItem reference="01q-Dc-PFl"/>
+                    <toolbarItem reference="dlZ-rj-URw"/>
+                    <toolbarItem reference="EK4-GR-5MX"/>
                 </defaultToolbarItems>
             </toolbar>
             <point key="canvasLocation" x="-220" y="-23"/>
         </window>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="xXf-2p-IYf">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="536" y="338" width="323" height="215"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="745"/>
+            <view key="contentView" id="sxc-Il-VLx" customClass="preferenceview" customModule="Card" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="323" height="215"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wr0-SU-hai">
+                        <rect key="frame" x="69" y="24" width="88" height="18"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DarkMode :" id="TwY-7G-btW">
+                            <font key="font" metaFont="system" size="16"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMR-9H-f5x" customClass="ITSwitch">
+                        <rect key="frame" x="180" y="20" width="50" height="26"/>
+                        <animations/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="isDark:" target="Voe-Tx-rLC" id="4O1-Ed-a3Z"/>
+                        </connections>
+                    </customView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CmQ-mA-0Ls">
+                        <rect key="frame" x="61" y="126" width="85" height="49"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Card" id="Vkg-kH-vKh">
+                            <font key="font" size="40" name="HelveticaNeue-Thin"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFJ-cs-PT5">
+                        <rect key="frame" x="172" y="86" width="87" height="89"/>
+                        <animations/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSApplicationIcon" id="Svc-Dv-oCM"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A8f-iX-OR8">
+                        <rect key="frame" x="69" y="109" width="73" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="version: 1.2" id="Sgs-JO-f4R">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XW-Ze-j5h">
+                        <rect key="frame" x="65" y="93" width="81" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="created by K" id="qeb-lk-59h">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <animations/>
+            </view>
+            <point key="canvasLocation" x="289.5" y="-29.5"/>
+        </window>
     </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+    </resources>
 </document>

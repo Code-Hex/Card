@@ -32,7 +32,6 @@ class TextView: NSTextView {
             } else if (i == 12 || i == 13) && modifierFlags.contains(.CommandKeyMask) {
                 NSApp.terminate(delegate)
             }
-            
             break
         }
     }

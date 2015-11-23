@@ -17,7 +17,11 @@
 		705748C81BFF05B1007B2699 /* 1up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 705748C51BFF05B1007B2699 /* 1up.wav */; };
 		705748C91BFF05B1007B2699 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 705748C61BFF05B1007B2699 /* coin.wav */; };
 		705748CA1BFF05B1007B2699 /* exit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 705748C71BFF05B1007B2699 /* exit.wav */; };
+		705F01B91C02D0B6005821FA /* networkII.plist in Resources */ = {isa = PBXBuildFile; fileRef = 705F01B81C02D0B6005821FA /* networkII.plist */; };
 		7075B8671C00918800D3C62E /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7075B8661C00918800D3C62E /* bg.png */; };
+		70BD17A81C0327C500687DFF /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BD17A61C0327C500687DFF /* ITSwitch.m */; };
+		70BD17A91C0327C500687DFF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 70BD17A71C0327C500687DFF /* LICENSE */; };
+		70F1C5F81C03160E00026D81 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70F1C5F71C03160E00026D81 /* FontAwesome.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +37,13 @@
 		705748C51BFF05B1007B2699 /* 1up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1up.wav; sourceTree = "<group>"; };
 		705748C61BFF05B1007B2699 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
 		705748C71BFF05B1007B2699 /* exit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = exit.wav; sourceTree = "<group>"; };
+		705F01B81C02D0B6005821FA /* networkII.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = networkII.plist; sourceTree = "<group>"; };
 		7075B8661C00918800D3C62E /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		70BD17A51C0327C500687DFF /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
+		70BD17A61C0327C500687DFF /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
+		70BD17A71C0327C500687DFF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		70BD17B21C03298600687DFF /* Card-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Card-Bridging-Header.h"; sourceTree = "<group>"; };
+		70F1C5F71C03160E00026D81 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +60,7 @@
 		705748A31BFE27DF007B2699 = {
 			isa = PBXGroup;
 			children = (
+				70BD17B21C03298600687DFF /* Card-Bridging-Header.h */,
 				705748AE1BFE27DF007B2699 /* Card */,
 				705748AD1BFE27DF007B2699 /* Products */,
 			);
@@ -73,7 +84,9 @@
 				705748B31BFE27DF007B2699 /* MainMenu.xib */,
 				705748B61BFE27DF007B2699 /* Info.plist */,
 				705748BC1BFEA97E007B2699 /* comsys.plist */,
+				705F01B81C02D0B6005821FA /* networkII.plist */,
 				705748BD1BFEA97E007B2699 /* test.plist */,
+				70BD17A41C0327C500687DFF /* ITSwitch */,
 				705748C41BFF05B1007B2699 /* Resourse */,
 			);
 			path = Card;
@@ -86,8 +99,19 @@
 				705748C51BFF05B1007B2699 /* 1up.wav */,
 				705748C61BFF05B1007B2699 /* coin.wav */,
 				705748C71BFF05B1007B2699 /* exit.wav */,
+				70F1C5F71C03160E00026D81 /* FontAwesome.otf */,
 			);
 			path = Resourse;
+			sourceTree = "<group>";
+		};
+		70BD17A41C0327C500687DFF /* ITSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				70BD17A51C0327C500687DFF /* ITSwitch.h */,
+				70BD17A61C0327C500687DFF /* ITSwitch.m */,
+				70BD17A71C0327C500687DFF /* LICENSE */,
+			);
+			path = ITSwitch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,11 +173,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705F01B91C02D0B6005821FA /* networkII.plist in Resources */,
 				705748CA1BFF05B1007B2699 /* exit.wav in Resources */,
 				705748BF1BFEA97E007B2699 /* test.plist in Resources */,
 				7075B8671C00918800D3C62E /* bg.png in Resources */,
 				705748B21BFE27DF007B2699 /* Assets.xcassets in Resources */,
+				70BD17A91C0327C500687DFF /* LICENSE in Resources */,
 				705748C81BFF05B1007B2699 /* 1up.wav in Resources */,
+				70F1C5F81C03160E00026D81 /* FontAwesome.otf in Resources */,
 				705748C91BFF05B1007B2699 /* coin.wav in Resources */,
 				705748BE1BFEA97E007B2699 /* comsys.plist in Resources */,
 				705748B51BFE27DF007B2699 /* MainMenu.xib in Resources */,
@@ -165,16 +192,16 @@
 /* Begin PBXShellScriptBuildPhase section */
 		705748CB1C004317007B2699 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\nset -eu\n\nPACKAGE_NAME=Card\nAPP=${PACKAGE_NAME}.app\nAPPLICATION=${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.app\nDEST=$HOME/Desktop/${PACKAGE_NAME}.dmg\n\ncd .\n[ -e ${BUILT_PRODUCTS_DIR}/dest ] && rm -rf ${BUILT_PRODUCTS_DIR}/dest\n\nif [[ ! -e ${BUILT_PRODUCTS_DIR}/dest ]]; then\nmkdir ${BUILT_PRODUCTS_DIR}/dest\nmkdir ${BUILT_PRODUCTS_DIR}/dest/.background\nfi\n\ncp -r ${APPLICATION} ${BUILT_PRODUCTS_DIR}/dest\ncp ${APPLICATION}/Contents/Resources/bg.png ${BUILT_PRODUCTS_DIR}/dest/.background\n\nhdiutil create -ov -srcfolder ${BUILT_PRODUCTS_DIR}/dest -fs HFS+ -format UDRW -imagekey zlib-level=9 -volname ${PACKAGE_NAME} ${BUILT_PRODUCTS_DIR}/pack.temp.dmg\ndevice=$(hdiutil attach -readwrite -noverify -noautoopen ${BUILT_PRODUCTS_DIR}/pack.temp.dmg | egrep '^/dev/' | sed 1q | awk '{print $1}')\n\nBGPICT=bg.png\n\n[ -e ${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.dmg ] && rm -f ${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.dmg\n\ncd ${BUILT_PRODUCTS_DIR}\necho '\ntell application \"Finder\"\ntell disk \"'${PACKAGE_NAME}'\"\nopen\nset current view of container window to icon view\nset toolbar visible of container window to false\nset statusbar visible of container window to false\nset the bounds of container window to {400, 50, 816, 633}\nset theViewOptions to the icon view options of container window\nset arrangement of theViewOptions to not arranged\nset icon size of theViewOptions to 80\nset background picture of theViewOptions to file \".background:'${BGPICT}'\"\nmake new alias file at container window to POSIX file \"/Applications\" with properties {name:\"Applications\"}\nset position of item \"'${APP}'\" of container window to {213, 230}\nset position of item \"Applications\" of container window to {213, 480}\nupdate without registering applications\ndelay 5\nclose\nend tell\nend tell\n' | osascript\necho 'do shell script \"chmod -Rf go-w /Volumes/${PACKAGE_NAME}\" with administrator privileges' | osascript\nsync\nsync\nhdiutil detach ${device}\nhdiutil convert ${BUILT_PRODUCTS_DIR}/pack.temp.dmg -format UDZO -imagekey zlib-level=9 -o ${DEST}\nrm -f ${BUILT_PRODUCTS_DIR}/pack.temp.dmg\nrm -rf ${BUILT_PRODUCTS_DIR}/dest\nexit 0";
+			shellScript = "#!/bin/sh\nset -eu\n\nPACKAGE_NAME=Card\nAPP=${PACKAGE_NAME}.app\nAPPLICATION=${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.app\nDEST=${SRCROOT}/${PACKAGE_NAME}.dmg\n\ncd .\n[ -e ${BUILT_PRODUCTS_DIR}/dest ] && rm -rf ${BUILT_PRODUCTS_DIR}/dest\n\nif [[ ! -e ${BUILT_PRODUCTS_DIR}/dest ]]; then\nmkdir ${BUILT_PRODUCTS_DIR}/dest\nmkdir ${BUILT_PRODUCTS_DIR}/dest/.background\nfi\n\ncp -r ${APPLICATION} ${BUILT_PRODUCTS_DIR}/dest\ncp ${APPLICATION}/Contents/Resources/bg.png ${BUILT_PRODUCTS_DIR}/dest/.background\n\nhdiutil create -ov -srcfolder ${BUILT_PRODUCTS_DIR}/dest -fs HFS+ -format UDRW -imagekey zlib-level=9 -volname ${PACKAGE_NAME} ${BUILT_PRODUCTS_DIR}/pack.temp.dmg\ndevice=$(hdiutil attach -readwrite -noverify -noautoopen ${BUILT_PRODUCTS_DIR}/pack.temp.dmg | egrep '^/dev/' | sed 1q | awk '{print $1}')\n\nBGPICT=bg.png\n\n[ -e ${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.dmg ] && rm -f ${BUILT_PRODUCTS_DIR}/${PACKAGE_NAME}.dmg\n\ncd ${BUILT_PRODUCTS_DIR}\necho '\ntell application \"Finder\"\ntell disk \"'${PACKAGE_NAME}'\"\nopen\nset current view of container window to icon view\nset toolbar visible of container window to false\nset statusbar visible of container window to false\nset the bounds of container window to {400, 50, 816, 633}\nset theViewOptions to the icon view options of container window\nset arrangement of theViewOptions to not arranged\nset icon size of theViewOptions to 80\nset background picture of theViewOptions to file \".background:'${BGPICT}'\"\nmake new alias file at container window to POSIX file \"/Applications\" with properties {name:\"Applications\"}\nset position of item \"'${APP}'\" of container window to {213, 230}\nset position of item \"Applications\" of container window to {213, 480}\nupdate without registering applications\ndelay 5\nclose\nend tell\nend tell\n' | osascript\necho 'do shell script \"chmod -Rf go-w /Volumes/${PACKAGE_NAME}\" with administrator privileges' | osascript\nsync\nsync\nhdiutil detach ${device}\nhdiutil convert ${BUILT_PRODUCTS_DIR}/pack.temp.dmg -format UDZO -imagekey zlib-level=9 -o ${DEST}\nrm -f ${BUILT_PRODUCTS_DIR}/pack.temp.dmg\nrm -rf ${BUILT_PRODUCTS_DIR}/dest\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -183,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BD17A81C0327C500687DFF /* ITSwitch.m in Sources */,
 				705748C11BFECA80007B2699 /* TextView.swift in Sources */,
 				705748B01BFE27DF007B2699 /* AppDelegate.swift in Sources */,
 				705748C31BFEF17C007B2699 /* File2Card.swift in Sources */,
@@ -292,6 +320,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CodeHex.Card;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Card-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -304,6 +333,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CodeHex.Card;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Card-Bridging-Header.h";
 			};
 			name = Release;
 		};

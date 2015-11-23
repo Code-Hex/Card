@@ -24,14 +24,21 @@ extension String {
 extension NSProgressIndicator {
     public override func drawRect(dirtyRect: NSRect) {
         var rect = NSInsetRect(self.bounds, 1.0, 1.0)
-        rect = NSInsetRect(rect, 3.5, 3.5)
+        rect = NSInsetRect(rect, 3.0, 3.0)
         let radius = rect.size.height / 2
         let barbz = NSBezierPath(roundedRect: rect, xRadius: radius, yRadius: radius)
         barbz.lineWidth = 1.0
         barbz.addClip()
         rect.size.width = floor(CGFloat(rect.size.width) * (CGFloat(self.doubleValue) / CGFloat(self.maxValue)))
-        NSColor(calibratedRed: 0.098, green: 0.710, blue: 0.996, alpha: 1).set()
+        NSColor(calibratedRed: 0.000, green: 0.478, blue: 1.000, alpha: 1).set()
         NSRectFill(rect)
+    }
+}
+
+class preferenceview: NSView {
+    override func drawRect(dirtyRect: NSRect) {
+        NSColor.clearColor().set()
+        NSRectFill(dirtyRect)
     }
 }
 
@@ -46,6 +53,15 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
     @IBOutlet weak var control: NSSegmentedCell!
     @IBOutlet weak var fontcontrol: NSSegmentedCell!
     @IBOutlet weak var windowbar: NSToolbar!
+    @IBOutlet weak var config: NSButtonCell!
+    @IBOutlet weak var alphaslider: NSSlider!
+    @IBOutlet weak var preference: NSWindow!
+    @IBOutlet weak var PreferenceView: preferenceview!
+    @IBOutlet weak var setSwitch: ITSwitch!
+    @IBOutlet weak var apptitle: NSTextField!
+    @IBOutlet weak var version: NSTextField!
+    @IBOutlet weak var author: NSTextField!
+    @IBOutlet weak var modelabel: NSTextField!
     
     var i = 0
     var keysize = 0
@@ -60,19 +76,24 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
     var exit = SystemSoundID()
     var dic = NSDictionary()
     let file2card = File2Card()
-    
+
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        NSApp.activateIgnoringOtherApps(true) // 最前面
         self.window.delegate = self
-        self.window.backgroundColor = NSColor(calibratedRed: 0.933, green: 0.933, blue: 0.933, alpha: 1)
+        self.window.backgroundColor = NSColor(calibratedRed: 0.969, green: 0.969, blue: 0.969, alpha: 1)
         self.window.movableByWindowBackground = true
         self.window.titleVisibility = .Hidden
         self.window.styleMask |= NSFullSizeContentViewWindowMask
-        self.window.titlebarAppearsTransparent = true
+        self.window.titlebarAppearsTransparent = false
+        self.preference.movableByWindowBackground = true
+        
         self.progress.wantsLayer = true
-
-        //self.progress.layer?.transform = CATransform3DMakeScale(1.0, 1, 0.0)
-        //self.progress.layer?.backgroundColor = NSColor(calibratedRed: 0.984, green: 0.988, blue: 0.988, alpha: 1).CGColor
-        //self.window.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+        self.alphaslider.minValue = 0.2
+        self.alphaslider.maxValue = 1.0
+        self.alphaslider.action = "setalpha:"
+        self.config.font = NSFont(name: "FontAwesome", size: 16)
+        self.config.title = "\u{f013}"
+        self.config.action = "preferenceAppear"
 
         self.textView.editable = false
         self.textView.delegate = self
@@ -80,8 +101,9 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         
         let ud = NSUserDefaults.standardUserDefaults()
         
-        if ud.floatForKey("fontsize").isZero {
+        if ud.floatForKey("fontsize").isZero { // Is first launch this app??
             ud.setFloat(12.0, forKey: "fontsize")
+            ud.setBool(false, forKey: "isdark")
             ud.synchronize()
         }
         
@@ -121,6 +143,8 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         self.play.action = "say"
         self.control.action = "navigate:"
         self.fontcontrol.action = "fontresize:"
+        setColorTheme(ud.boolForKey("isdark"))
+        self.setSwitch.checked = ud.boolForKey("isdark")
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -133,8 +157,6 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         let frame: NSRect = NSScreen.mainScreen()!.visibleFrame
         let max_height: CGFloat = frame.origin.y + frame.size.height - self.window.frame.size.height
         let min_height: CGFloat = frame.origin.y - frame.size.height + self.window.frame.size.height
-        NSLog("%1.2f", max_height / 1000)
-        NSLog("%1.2f", -min_height / 1000)
         var newframe = self.window.frame
         newframe.origin.y = max_height
         
@@ -178,6 +200,42 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         
         let stop = Double(NSDate().timeIntervalSinceDate(Start))
         NSThread.sleepForTimeInterval(3.1 - stop)
+    }
+    
+    @IBAction func isDark(sender: ITSwitch) {
+        let isdark = sender.checked
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setBool(isdark, forKey: "isdark")
+        setColorTheme(isdark)
+    }
+    
+    func setColorTheme(isdark: Bool) {
+        if isdark {
+            self.window.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+            self.preference.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+            self.apptitle.textColor = NSColor.whiteColor()
+            self.version.textColor = NSColor.whiteColor()
+            self.author.textColor = NSColor.whiteColor()
+            self.modelabel.textColor = NSColor.whiteColor()
+            self.textView.textColor = NSColor.whiteColor()
+        } else {
+            self.window.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+            self.preference.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+            self.apptitle.textColor = NSColor.blackColor()
+            self.version.textColor = NSColor.blackColor()
+            self.author.textColor = NSColor.blackColor()
+            self.modelabel.textColor = NSColor.blackColor()
+            self.textView.textColor = NSColor.blackColor()
+        }
+    }
+    
+    func setalpha(sender: NSSlider) {
+        let val = CGFloat(sender.floatValue)
+        self.window.alphaValue = val
+    }
+    
+    func preferenceAppear() {
+        self.preference.makeKeyAndOrderFront(self)
     }
     
     func say() {
@@ -249,11 +307,9 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
             fixed = dic[ans]!.stringByReplacingOccurrencesOfString("\n", withString: "") as String
             self.textView.string = fixed
             status = "Answer"
-            //self.Next.title = status
         } else {
             self.textView.string = ans
             status = "Next"
-            //self.Next.title = status
         }
     }
     
@@ -261,11 +317,9 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         if status == "Next" {
             self.textView.string = fixed
             status = "Answer"
-            //self.Next.title = status
         } else if status == "Answer" {
             self.textView.string = ans
             status = "Next"
-            //self.Next.title = status
         }
     }
     
@@ -331,7 +385,6 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
                 pushtoback()
                 break
             default:
-                
                 if (i == 12 || i == 13) && modifierFlags.contains(.CommandKeyMask) {
                     NSApp.terminate(delegate)
                 }
