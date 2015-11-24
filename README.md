@@ -1,8 +1,8 @@
 <p align="center">
 <img src ="https://github.com/Code-Hex/Card/blob/master/Card/Card/Assets.xcassets/AppIcon.appiconset/256.png" /><br>
-<h2 align="center">Card</h2> 
+<h3 align="center">Card</h3> 
 <p align="center"><s>情報ネットワークの</s>テストを乗り切るために開発されたMac用アプリ</p>
-<p><a href="https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true">Download</a></p>
+<p align="center"><a href="https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true">Download</a></p>
 </p>
 
 ## 使い方
