@@ -1,8 +1,9 @@
 # Card
 ~~情報ネットワークの~~テストを乗り切るために開発されたMac用アプリ  
-<div style="text-align: center;">
-<img align="center" src ="https://github.com/Code-Hex/Card/blob/master/Card/Card/Assets.xcassets/AppIcon.appiconset/256.png" />
-[Download](https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true)  
+<p align="center">
+<img src ="https://github.com/Code-Hex/Card/blob/master/Card/Card/Assets.xcassets/AppIcon.appiconset/256.png" /><br><br>
+<a style="width:280px; background-color:#aaa; border-radius:3px; box-shadow:0 3px 0 rgba(136,136,136,1); color:#fff; display:block; font-size:18px; font-weight:bold; text-align:center; text-decoration:none; margin:10px auto; padding:10px 0;" href="https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true">Download</a>
+</p>
 
 ## 使い方
 
