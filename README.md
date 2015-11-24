@@ -1,7 +1,7 @@
 # Card
 ~~情報ネットワークの~~テストを乗り切るために開発されたMac用アプリ  
 <div style="text-align: center;">
-<div style="text-align:center"><img src ="https://github.com/Code-Hex/Card/blob/master/Card/Card/Assets.xcassets/AppIcon.appiconset/256.png" /></div>
+<img align="center" src ="https://github.com/Code-Hex/Card/blob/master/Card/Card/Assets.xcassets/AppIcon.appiconset/256.png" />
 [Download](https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true)  
 
 ## 使い方
