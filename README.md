@@ -1,8 +1,8 @@
-# Card
-~~情報ネットワークの~~テストを乗り切るために開発されたMac用アプリ  
 <p align="center">
-<img src ="https://github.com/Code-Hex/Card/blob/master/Card/Card/Assets.xcassets/AppIcon.appiconset/256.png" /><br><br>
-<a style="width:280px; background-color:#aaa; border-radius:3px; box-shadow:0 3px 0 rgba(136,136,136,1); color:#fff; display:block; font-size:18px; font-weight:bold; text-align:center; text-decoration:none; margin:10px auto; padding:10px 0;" href="https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true">Download</a>
+<img src ="https://github.com/Code-Hex/Card/blob/master/Card/Card/Assets.xcassets/AppIcon.appiconset/256.png" /><br>
+<h2 align="center">Card</h2> 
+<p align="center"><s>情報ネットワークの</s>テストを乗り切るために開発されたMac用アプリ</p>
+<p><a href="https://github.com/Code-Hex/Card/blob/master/Card/Card.dmg?raw=true">Download</a></p>
 </p>
 
 ## 使い方
