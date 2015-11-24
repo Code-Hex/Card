@@ -19,3 +19,5 @@ command + q または command + w で終了
   
 ##Special Thanks!!
 [ITSwitch](https://github.com/iluuu1994/ITSwitch)
+##Finally
+This license is [GNU General Public License v2.0](https://github.com/Code-Hex/Card/blob/master/license.txt)
