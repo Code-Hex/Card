@@ -62,6 +62,7 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
     @IBOutlet weak var version: NSTextField!
     @IBOutlet weak var author: NSTextField!
     @IBOutlet weak var modelabel: NSTextField!
+    @IBOutlet weak var statusmenu: NSMenu!
     
     var i = 0
     var keysize = 0
@@ -76,9 +77,18 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
     var exit = SystemSoundID()
     var dic = NSDictionary()
     let file2card = File2Card()
+    let systembaritem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+    
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        NSApp.activateIgnoringOtherApps(true) // 最前面
+        systembaritem.highlightMode = true
+        systembaritem.title = "\u{f28f}"
+        let attricon = NSMutableAttributedString(string:"\u{f28f}", attributes: [NSFontAttributeName : NSFont(name: "Material-Design-Iconic-Font", size: 18.0)!])
+        systembaritem.attributedTitle = attricon
+        systembaritem.menu = statusmenu
+        
+        
+        self.window.makeKeyAndOrderFront(self)
         self.window.delegate = self
         self.window.backgroundColor = NSColor(calibratedRed: 0.969, green: 0.969, blue: 0.969, alpha: 1)
         self.window.movableByWindowBackground = true

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
@@ -27,6 +26,7 @@
                 <outlet property="preference" destination="xXf-2p-IYf" id="blP-IV-tZW"/>
                 <outlet property="progress" destination="JKO-jS-Wd2" id="ovQ-Ok-lnA"/>
                 <outlet property="setSwitch" destination="lMR-9H-f5x" id="OQC-wU-6IT"/>
+                <outlet property="statusmenu" destination="FYN-XH-m2T" id="s8m-gr-XvU"/>
                 <outlet property="textView" destination="Wq7-vm-Tqi" id="jE0-QX-S3F"/>
                 <outlet property="version" destination="A8f-iX-OR8" id="tQR-Mx-Wab"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="Cbf-uk-ha0"/>
@@ -143,17 +143,17 @@
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="01q-Dc-PFl"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="IYa-dZ-YyK"/>
-                    <toolbarItem implicitItemIdentifier="70CA96DA-5E47-4E63-B333-FB3A9A7FB32A" label="Card Preference" paletteLabel="Card Preference" id="EK4-GR-5MX">
+                    <toolbarItem implicitItemIdentifier="70CA96DA-5E47-4E63-B333-FB3A9A7FB32A" label="Preference" paletteLabel="Preference" id="EK4-GR-5MX">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="31" height="19"/>
-                        <size key="maxSize" width="32" height="19"/>
+                        <size key="minSize" width="10" height="18"/>
+                        <size key="maxSize" width="50" height="19"/>
                         <button key="view" verticalHuggingPriority="750" id="ohr-sO-rQo">
-                            <rect key="frame" x="31" y="14" width="31" height="19"/>
+                            <rect key="frame" x="17" y="14" width="32" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <animations/>
-                            <buttonCell key="cell" type="roundTextured" title="B" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uwU-Zb-jSn">
+                            <buttonCell key="cell" type="roundTextured" title=" " bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uwU-Zb-jSn">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" size="13" name="ArialUnicodeMS"/>
+                                <font key="font" metaFont="system"/>
                             </buttonCell>
                         </button>
                     </toolbarItem>
@@ -174,7 +174,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="745"/>
             <view key="contentView" id="sxc-Il-VLx" customClass="preferenceview" customModule="Card" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="323" height="215"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wr0-SU-hai">
                         <rect key="frame" x="69" y="24" width="88" height="18"/>
@@ -234,6 +234,16 @@
             </view>
             <point key="canvasLocation" x="289.5" y="-29.5"/>
         </window>
+        <menu id="FYN-XH-m2T">
+            <items>
+                <menuItem title="Quit Card" id="lAL-gU-Qjk" userLabel="Quit">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="terminate:" target="-2" id="m4Z-en-ZZr"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
