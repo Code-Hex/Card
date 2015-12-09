@@ -28,7 +28,9 @@ class File2Card: NSObject {
     override init() {
         super.init()
         let voice_name = "com.apple.speech.synthesis.voice.kyoko.premium"
-        self.speech = NSSpeechSynthesizer(voice: voice_name)!
+        if let sp = NSSpeechSynthesizer(voice: voice_name) {
+            self.speech = sp
+        }
         let ary = self.getFileList(".plist")
         self.filelist = ary.sort()
         print("init")

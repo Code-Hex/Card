@@ -151,6 +151,7 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         file2card.speech.delegate = self
         self.textView.font = NSFont.systemFontOfSize(fontsize)
         self.play.action = "say"
+        
         self.control.action = "navigate:"
         self.fontcontrol.action = "fontresize:"
         setColorTheme(ud.boolForKey("isdark"))
