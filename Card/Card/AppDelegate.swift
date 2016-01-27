@@ -70,7 +70,6 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
     var ans = ""
     var fixed = ""
     var status = "Answer"
-    var isVoice = false
     var keys = [NSString]()
     var start = SystemSoundID()
     var up = SystemSoundID()
@@ -150,8 +149,9 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         
         file2card.speech.delegate = self
         self.textView.font = NSFont.systemFontOfSize(fontsize)
-        self.play.action = "say"
-        
+        if file2card.isVoice {
+            self.play.action = "say"
+        }
         self.control.action = "navigate:"
         self.fontcontrol.action = "fontresize:"
         setColorTheme(ud.boolForKey("isdark"))

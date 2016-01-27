@@ -23,6 +23,7 @@
 		70BD17A81C0327C500687DFF /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BD17A61C0327C500687DFF /* ITSwitch.m */; };
 		70BD17A91C0327C500687DFF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 70BD17A71C0327C500687DFF /* LICENSE */; };
 		70F1C5F81C03160E00026D81 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70F1C5F71C03160E00026D81 /* FontAwesome.otf */; };
+		70F222D01C58EC91002AC164 /* networkII-after.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70F222CF1C58EC91002AC164 /* networkII-after.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		70BD17A71C0327C500687DFF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		70BD17B21C03298600687DFF /* Card-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Card-Bridging-Header.h"; sourceTree = "<group>"; };
 		70F1C5F71C03160E00026D81 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		70F222CF1C58EC91002AC164 /* networkII-after.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "networkII-after.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				705748B61BFE27DF007B2699 /* Info.plist */,
 				705748BC1BFEA97E007B2699 /* comsys.plist */,
 				705F01B81C02D0B6005821FA /* networkII.plist */,
+				70F222CF1C58EC91002AC164 /* networkII-after.plist */,
 				705748BD1BFEA97E007B2699 /* test.plist */,
 				70BD17A41C0327C500687DFF /* ITSwitch */,
 				705748C41BFF05B1007B2699 /* Resourse */,
@@ -185,6 +188,7 @@
 				705748C81BFF05B1007B2699 /* 1up.wav in Resources */,
 				700F3A9C1C06D9C900773BD8 /* Material-Design-Iconic-Font.ttf in Resources */,
 				70F1C5F81C03160E00026D81 /* FontAwesome.otf in Resources */,
+				70F222D01C58EC91002AC164 /* networkII-after.plist in Resources */,
 				705748C91BFF05B1007B2699 /* coin.wav in Resources */,
 				705748BE1BFEA97E007B2699 /* comsys.plist in Resources */,
 				705748B51BFE27DF007B2699 /* MainMenu.xib in Resources */,
