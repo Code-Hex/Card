@@ -13,18 +13,8 @@ class File2Card: NSObject {
     var now_setFile = ""
     var filelist = [String]()
     var speech = NSSpeechSynthesizer()
-    var keysize = 0
     var isVoice = false
     
-    var keys: [String] {
-        get {
-            return self.keys
-        }
-        set(array) {
-            self.keys = array
-            self.keysize = self.keys.count
-        }
-    }
     
     override init() {
         super.init()
@@ -60,15 +50,12 @@ class File2Card: NSObject {
         return array
     }
     
-    func shuffle() {
-        for var ui = 0; ui < keysize - 1; ++ui {
-            let remainingCount = keysize - ui
-            let exchangeIndex = ui + Int(arc4random_uniform(UInt32(remainingCount)))
-            exchange(&keys, i: ui, j: exchangeIndex)
+    func shuffle<T>(inout k: [T]) {
+        for var ui = k.count - 1; ui > 0; ui-- {
+            let exchangeIndex = Int(arc4random_uniform(UInt32(ui + 1)))
+            if ui != exchangeIndex {
+                swap(&k[ui], &k[exchangeIndex])
+            }
         }
-    }
-    
-    func exchange<T>(inout data: [T], i: Int, j: Int) {
-        swap(&data[i], &data[j])
     }
 }

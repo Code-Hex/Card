@@ -117,7 +117,6 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         }
         
         var cnt = 0
-        keysize = file2card.keysize
         let fontsize = CGFloat(ud.floatForKey("fontsize"))
         for title: String in file2card.filelist {
             let menuItem: NSMenuItem = NSMenuItem(title: title, action: "fileswitch:", keyEquivalent: "")
@@ -156,6 +155,9 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
         self.fontcontrol.action = "fontresize:"
         setColorTheme(ud.boolForKey("isdark"))
         self.setSwitch.checked = ud.boolForKey("isdark")
+        
+        window.collectionBehavior = .CanJoinAllSpaces
+        window.level = Int(CGWindowLevelForKey(.MaximumWindowLevelKey))
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -308,7 +310,7 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
             i++
             if i % keysize == 0 {
                 i = 0
-                file2card.shuffle()
+                file2card.shuffle(&keys)
                 AudioServicesPlaySystemSound(up)
                 progress.doubleValue = Double(i)
             } else {
@@ -343,8 +345,10 @@ class AppDelegate: NSWindow,NSApplicationDelegate,NSWindowDelegate,NSSpeechSynth
             file2card.now_setFile = filename
             dic = NSDictionary(contentsOfFile: path!)!
             keys = dic.allKeys as! [String]
+
+            file2card.shuffle(&keys)
             keysize = keys.count
-            file2card.shuffle()
+            
             i = 0
             progress.maxValue = Double(keysize)
             progress.doubleValue = Double(i)
